@@ -1,0 +1,971 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="ADEN - Pro-Grade Order Book DEX for Everyone">
+  <!-- Navigation -->
+  <nav class="fixed top-7 left-1/2 transform -translate-x-1/2 z-50 w-[343px] md:w-[1240px] max-w-[calc(100vw-2rem)]">
+    <div class="bg-white/[0.04] backdrop-blur-[10px] border border-white/[0.12] rounded-2xl px-[10px] md:px-6 py-2 flex justify-between items-center">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <!-- Mobile Logo -->
+        <svg
+          class="md:hidden"
+          width="69"
+          height="16"
+          viewBox="0 0 69 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g clip-path="url(#clip0_12033_3574)">
+            <path
+              d="M15.8809 9.27227C16.5827 4.91021 13.6195 0.804503 9.2625 0.10191C4.90548 -0.600683 0.804503 2.3659 0.102721 6.72796C-0.599062 11.09 2.3641 15.1957 6.72112 15.8983C11.0781 16.6009 15.1791 13.6343 15.8809 9.27227Z"
+              fill="#EDA320"
+            />
+            <path
+              d="M28.7754 15.1757L27.6284 11.9806H22.3223L21.1752 15.1757H18.3604L23.7368 0.82782H26.2807L31.6572 15.1757H28.7719H28.7754ZM24.9753 4.59004L23.3075 9.21179H26.6396L24.9718 4.59004H24.9753Z"
+              fill="white"
+            />
+            <path
+              d="M37.885 15.1228H32.9941V0.877136H37.885C41.8294 0.877136 44.5528 3.94891 44.5528 7.96124V8.00351C44.5528 12.0123 41.8294 15.1264 37.885 15.1264V15.1228ZM41.664 7.99999C41.664 5.47775 40.1404 3.70585 37.8815 3.70585H35.7492V12.2941H37.8815C40.1404 12.2941 41.664 10.5645 41.664 8.03874V7.99647V7.99999Z"
+              fill="white"
+            />
+            <path
+              d="M45.8824 15.1228V0.877136H55.344V3.6671H48.6234V6.55569H54.5382V9.34565H48.6234V12.3364H55.4319V15.1264H45.8789L45.8824 15.1228Z"
+              fill="white"
+            />
+            <path
+              d="M68.9998 13.1466L66.2764 9.08145V0.877136H68.9998V13.1466Z"
+              fill="#EDA320"
+            />
+            <path
+              d="M68.9017 15.1228H65.5661L59.4929 6.06604V15.1228H56.7695V0.877136H59.3135L68.9017 15.1228Z"
+              fill="white"
+            />
+          </g>
+        </svg>
+
+        <!-- Desktop Logo -->
+        <svg
+          class="hidden md:block"
+          width="104"
+          height="24"
+          viewBox="0 0 104 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g clip-path="url(#clip0_12028_490)">
+            <path
+              d="M23.9361 13.9084C24.9939 7.36529 20.5277 1.20673 13.9605 0.152835C7.39344 -0.901055 1.21226 3.54882 0.1545 10.0919C-0.903259 16.635 3.56295 22.7936 10.1301 23.8474C16.6972 24.9013 22.8783 20.4515 23.9361 13.9084Z"
+              fill="#EDA320"
+            />
+            <path
+              d="M43.371 22.7636L41.642 17.971H33.6445L31.9156 22.7636H27.6729L35.7765 1.24176H39.6108L47.7145 22.7636H43.3657H43.371ZM37.6433 6.88509L35.1295 13.8177H40.1518L37.638 6.88509H37.6433Z"
+              fill="white"
+            />
+            <path
+              d="M57.1022 22.6843H49.7305V1.31573H57.1022C63.0473 1.31573 67.1522 5.9234 67.1522 11.9419V12.0053C67.1522 18.0185 63.0473 22.6896 57.1022 22.6896V22.6843ZM62.7981 12C62.7981 8.21666 60.5017 5.5588 57.0969 5.5588H53.883V18.4412H57.0969C60.5017 18.4412 62.7981 15.8468 62.7981 12.0581V11.9947V12Z"
+              fill="white"
+            />
+            <path
+              d="M69.1567 22.6843V1.31573H83.4176V5.50068H73.288V9.83357H82.2031V14.0185H73.288V18.5046H83.5501V22.6896H69.1514L69.1567 22.6843Z"
+              fill="white"
+            />
+            <path
+              d="M104 19.72L99.8955 13.6222V1.31573H104V19.72Z"
+              fill="#EDA320"
+            />
+            <path
+              d="M103.852 22.6843H98.824L89.6703 9.09909V22.6843H85.5654V1.31573H89.3998L103.852 22.6843Z"
+              fill="white"
+            />
+          </g>
+        </svg>
+      </div>
+
+      <!-- Mobile Navigation and Language Selector -->
+      <div class="md:hidden flex items-center gap-4">
+        <div class="flex items-center gap-4">
+          <a
+            href="#"
+            class="text-white/90 hover:text-white text-[13px] font-pretendard"
+          >
+            Trade
+          </a>
+          <a
+            href="#"
+            class="text-white/90 hover:text-white text-[13px] font-pretendard"
+          >
+            Docs
+          </a>
+          <a
+            href="#"
+            class="text-white/90 hover:text-white text-[13px] font-pretendard"
+          >
+            Support
+          </a>
+        </div>
+        <div class="flex items-center gap-1 px-2 py-[6px] border border-white/[0.12] bg-white/[0.04] backdrop-blur-[6px] rounded-[10px] shadow-[0px_1px_2px_0px_rgba(13,13,18,0.06)]">
+          <span class="text-[#E8E8E8]/80 text-center font-play text-xs font-bold leading-4">
+            KR
+          </span>
+          <svg
+            width="8"
+            height="8"
+            viewBox="0 0 8 8"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M1.47718 2.83731C1.56704 2.73248 1.72486 2.72033 1.82969 2.81019L4.00033 4.67074L6.17097 2.81019C6.2758 2.72034 6.43362 2.73248 6.52348 2.83731C6.61333 2.94214 6.60119 3.09996 6.49636 3.18982L4.16303 5.18982C4.06941 5.27007 3.93125 5.27007 3.83763 5.18982L1.5043 3.18982C1.39947 3.09996 1.38733 2.94214 1.47718 2.83731Z"
+              fill="#EDA320"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Desktop Navigation Links -->
+      <div class="hidden md:flex items-center gap-10">
+        <a
+          href="#"
+          class="text-white/90 hover:text-white text-base font-pretendard"
+        >
+          Trade
+        </a>
+        <a
+          href="#"
+          class="text-white/90 hover:text-white text-base font-pretendard"
+        >
+          Docs
+        </a>
+        <a
+          href="#"
+          class="text-white/90 hover:text-white text-base font-pretendard"
+        >
+          Support
+        </a>
+      </div>
+
+      <!-- Desktop Language Selector -->
+      <div class="hidden md:flex items-center bg-aden-dark/40 border border-white/[0.06] rounded-[26px] p-2">
+        <div class="px-4 py-2 rounded-[18px] text-aden-text-muted font-play text-sm font-bold">
+          KR
+        </div>
+        <div class="px-4 py-2 rounded-[18px] bg-aden-primary text-white font-play text-sm font-bold">
+          EN
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative h-[812px] md:h-[1024px] flex flex-col items-center justify-center px-4 md:px-[100px] pt-[30px] md:pt-[130px] gap-[100px] overflow-hidden">
+    <!-- Background Sky -->
+    <div class="absolute inset-0 w-full h-[770px]">
+      <!-- Orange Gradient Blur - Mobile -->
+      <div class="md:hidden absolute left-0 top-[-107px] w-[374px] h-[213px] rounded-full bg-aden-primary blur-[250px]"></div>
+
+      <!-- Orange Gradient Blur - Desktop -->
+      <div class="hidden md:block absolute left-1/2 top-[-210px] transform -translate-x-1/2 w-[728px] h-[414px] rounded-full bg-aden-primary blur-[250px]"></div>
+
+      <!-- Sky Images - Mobile -->
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/42444440e2ca6db5e560b23a3d3aa62bbe895819?width=1499"
+        alt="Sky background mobile"
+        class="md:hidden absolute left-[-187px] top-[237px] w-[750px] h-[533px] object-cover"
+      />
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/370ebca98a83373a0fedc446538d09781c7763d1?width=1380"
+        alt="Sky overlay mobile"
+        class="md:hidden absolute left-[-690px] top-0 w-[690px] h-[924px] object-cover"
+      />
+
+      <!-- Sky Images - Desktop -->
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/2cd7fcbc8463bd8bd0008307bd3abf8f8e3ad179?width=2481"
+        alt="Sky background"
+        class="hidden md:block absolute left-[100px] top-[142px] w-[1240px] h-[882px] object-cover"
+      />
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/6f837b2e9d551a11a345680db4ea71e5a3a76694?width=2880"
+        alt="Sky overlay"
+        class="hidden md:block absolute left-0 top-0 w-full h-[924px] object-cover"
+      />
+
+      <!-- Dark Gradient Blur - Mobile -->
+      <div class="md:hidden absolute left-[-176px] top-[178px] w-[728px] h-[414px] rounded-full bg-aden-dark blur-[250px]"></div>
+
+      <!-- Dark Gradient Blur - Desktop -->
+      <div class="hidden md:block absolute left-1/2 top-[305px] transform -translate-x-1/2 w-[728px] h-[414px] rounded-full bg-aden-dark blur-[250px]"></div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="relative z-10 flex flex-col items-center gap-[50px] w-full max-w-[343px] md:max-w-[1240px] mt-[198px] md:mt-[200px]">
+      <!-- Text Content -->
+      <div class="flex flex-col items-center gap-10 md:gap-10 w-full">
+        <div class="flex flex-col items-center gap-5 w-full">
+          <!-- Badge -->
+          <div class="flex items-center justify-center gap-3 px-3 py-2 bg-white/[0.12] backdrop-blur-[2px] rounded-xl">
+            <span class="text-white text-center font-pretendard text-xs md:text-sm font-medium leading-4 md:leading-5">
+              DEX Crypto Futures Trading Platform
+            </span>
+          </div>
+
+          <!-- Main Heading -->
+          <h1 class="text-center font-pretendard text-[40px] md:text-6xl font-bold leading-[52px] md:leading-[80px] bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent w-full">
+            A Pro-Grade Order Book DEX for Everyone
+          </h1>
+
+          <!-- Description -->
+          <p class="w-full md:max-w-[678px] text-white/60 text-center font-pretendard text-[13px] md:text-lg leading-5 md:leading-7">
+            The convenience of a centralized exchange order book system
+            combined with the freedom of decentralization. Easy for
+            beginners, more powerful for experts.
+          </p>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="flex items-center gap-3 w-full md:w-auto md:justify-center">
+          <button class="flex items-center justify-center gap-2 h-12 md:h-[52px] px-6 py-2 bg-aden-primary rounded-[10px] shadow-[0px_1px_2px_0px_rgba(13,13,18,0.06)] flex-1 md:flex-initial">
+            <span class="text-white text-center font-pretendard text-[13px] md:text-base font-bold leading-5 md:leading-6">
+              Start Trading →
+            </span>
+          </button>
+          <button class="flex items-center justify-center gap-2 h-12 md:h-[52px] px-6 py-2 border border-white/[0.12] bg-white/[0.04] backdrop-blur-[6px] rounded-[10px] shadow-[0px_1px_2px_0px_rgba(13,13,18,0.06)] flex-1 md:flex-initial">
+            <span class="text-white text-center font-pretendard text-[13px] md:text-base font-bold leading-5 md:leading-6">
+              Explore the Platform
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section class="py-10 md:py-10">
+    <div class="flex flex-col items-center gap-12 px-4">
+      <div class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-6 w-full max-w-6xl py-10 md:py-16 border-t border-b border-white/50 px-4 md:px-0">
+        <div class="flex flex-col items-center gap-1 md:gap-2 w-[280px]">
+          <h3 class="text-center font-pretendard text-[40px] md:text-5xl font-bold leading-[52px] md:leading-[60px] bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent">
+            $1.2B+
+          </h3>
+          <p class="text-aden-text-muted text-center font-pretendard text-[13px] md:text-base leading-5 md:leading-6">
+            Cumulative Trading Volume
+          </p>
+        </div>
+        <div class="flex flex-col items-center gap-1 md:gap-2 w-[280px]">
+          <h3 class="text-center font-pretendard text-[40px] md:text-5xl font-bold leading-[52px] md:leading-[60px] bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent">
+            85K+
+          </h3>
+          <p class="text-aden-text-muted text-center font-pretendard text-[13px] md:text-base leading-5 md:leading-6">
+            Active Traders
+          </p>
+        </div>
+        <div class="flex flex-col items-center gap-1 md:gap-2 w-[280px]">
+          <h3 class="text-center font-pretendard text-[40px] md:text-5xl font-bold leading-[52px] md:leading-[60px] bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent">
+            150+
+          </h3>
+          <p class="text-aden-text-muted text-center font-pretendard text-[13px] md:text-base leading-5 md:leading-6">
+            Tradable Markets
+          </p>
+        </div>
+        <div class="flex flex-col items-center gap-1 md:gap-2 w-[280px]">
+          <h3 class="text-center font-pretendard text-[40px] md:text-5xl font-bold leading-[52px] md:leading-[60px] bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent">
+            $125M
+          </h3>
+          <p class="text-aden-text-muted text-center font-pretendard text-[13px] md:text-base leading-5 md:leading-6">
+            Daily Trading Volume
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-10 md:py-[100px] px-4 md:px-[100px]">
+    <div class="flex flex-col items-center md:items-center gap-10 md:gap-20 w-full">
+      <!-- Section Header -->
+      <div class="flex flex-col items-center md:items-start gap-4 w-full">
+        <div class="flex items-center px-3 py-[6px] bg-aden-dark-card rounded-2xl">
+          <span class="text-white text-center font-pretendard text-xs md:text-sm font-bold leading-4 md:leading-5 tracking-[0.12px] md:tracking-[0.14px]">
+            Features
+          </span>
+        </div>
+        <h2 class="font-pretendard text-[28px] md:text-5xl font-bold leading-10 md:leading-[60px] bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent text-center md:text-left">
+          Why ADEN?
+        </h2>
+      </div>
+
+      <!-- Features Grid -->
+      <div class="flex flex-col items-start gap-[10px] w-full p-4 md:p-6 border border-white/[0.12] bg-black/[0.04] rounded-3xl">
+        <div class="flex flex-col lg:flex-row items-start gap-0 md:gap-6 w-full">
+          <!-- Feature Card 1 -->
+          <div class="flex flex-col items-start gap-5 md:gap-10 flex-1 p-6 rounded-3xl w-full">
+            <div class="w-6 h-6 md:w-[62px] md:h-[62px] bg-aden-dark-card rounded-[10px] flex items-center justify-center">
+              <svg class="w-3 h-3 md:w-8 md:h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#EDA320" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 17L12 22L22 17" stroke="#EDA320" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 12L12 17L22 12" stroke="#EDA320" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="flex flex-col items-start gap-1 md:gap-2 w-full">
+              <h3 class="text-white font-pretendard text-xl md:text-2xl font-bold leading-8 md:leading-9">
+                Seamless Asset Transfers Anytime
+              </h3>
+              <p class="text-aden-text-secondary font-pretendard text-[13px] md:text-base leading-5 md:leading-6 tracking-[-0.26px] md:tracking-[-0.32px]">
+                Withdraw anytime with no delays or restrictions. Full
+                control and true ownership of your assets.
+              </p>
+            </div>
+          </div>
+
+          <!-- Feature Card 2 -->
+          <div class="flex flex-col items-start gap-5 md:gap-10 flex-1 p-6 rounded-3xl w-full">
+            <div class="w-6 h-6 md:w-[62px] md:h-[62px] bg-aden-dark-card rounded-[10px] flex items-center justify-center">
+              <svg class="w-3 h-3 md:w-8 md:h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 3V21H21" stroke="#EDA320" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M7 16L12 11L16 15L21 10" stroke="#EDA320" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="flex flex-col items-start gap-1 md:gap-2 w-full">
+              <h3 class="text-white font-pretendard text-xl md:text-2xl font-bold leading-8 md:leading-9">
+                CEX-Level Trading Experience
+              </h3>
+              <p class="text-aden-text-secondary font-pretendard text-[13px] md:text-base leading-5 md:leading-6">
+                Market, limit, and conditional orders—just like a
+                centralized exchange.
+              </p>
+            </div>
+          </div>
+
+          <!-- Feature Card 3 -->
+          <div class="flex flex-col items-start gap-5 md:gap-10 flex-1 p-6 rounded-3xl w-full">
+            <div class="w-6 h-6 md:w-[62px] md:h-[62px] bg-aden-dark-card rounded-[10px] flex items-center justify-center">
+              <svg class="w-3 h-3 md:w-8 md:h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="#EDA320" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="flex flex-col items-start gap-1 md:gap-2 w-full">
+              <h3 class="text-white font-pretendard text-xl md:text-2xl font-bold leading-8 md:leading-9">
+                Optimized Trading Conditions
+              </h3>
+              <p class="text-aden-text-secondary font-pretendard text-[13px] md:text-base leading-5 md:leading-6">
+                Low-cost, high-efficiency trading powered by automated
+                infrastructure.
+              </p>
+            </div>
+          </div>
+
+          <!-- Feature Card 4 -->
+          <div class="flex flex-col items-start gap-5 md:gap-10 flex-1 p-6 rounded-3xl w-full">
+            <div class="w-6 h-6 md:w-[62px] md:h-[62px] bg-aden-dark-card rounded-[10px] flex items-center justify-center">
+              <svg class="w-3 h-3 md:w-8 md:h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke="#EDA320" stroke-width="2"/>
+                <path d="M9 12L11 14L15 10" stroke="#EDA320" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="flex flex-col items-start gap-1 md:gap-2 w-full">
+              <h3 class="text-white font-pretendard text-xl md:text-2xl font-bold leading-8 md:leading-9">
+                Instant Trades, No Complex Steps
+              </h3>
+              <p class="text-aden-text-secondary font-pretendard text-[13px] md:text-base leading-5 md:leading-6">
+                Just connect your wallet to trade instantly. No KYC
+                needed—global, private, and easy.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Trading Platform Section -->
+  <section class="py-10 md:py-[100px] px-4 md:px-[100px]">
+    <div class="flex flex-col justify-center items-start gap-[70px] md:gap-[70px] w-full">
+      <!-- Section Header -->
+      <div class="flex flex-col items-center gap-5 md:gap-10 w-full">
+        <div class="flex flex-col items-center gap-4 w-full">
+          <div class="flex items-center px-3 py-[6px] bg-aden-dark-card rounded-2xl">
+            <span class="text-white text-center font-pretendard text-xs md:text-sm font-bold leading-4 md:leading-5 tracking-[0.12px] md:tracking-[0.14px]">
+              Highlights
+            </span>
+          </div>
+          <h2 class="text-center font-pretendard text-[28px] md:text-5xl font-bold leading-10 md:leading-[60px] bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent">
+            Professional Trading Platform
+          </h2>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="flex flex-col items-center justify-center gap-[10px] w-full px-0 md:px-[120px]">
+          <div class="flex justify-center items-center w-full p-2 border border-white/[0.12] bg-black/[0.04] rounded-[34px]">
+            <div class="flex justify-center items-center gap-1 flex-1 p-3 px-6 bg-aden-primary rounded-[31px]">
+              <span class="text-white font-pretendard text-[10px] md:text-lg font-bold leading-3 md:leading-7">
+                Advanced Order Book System
+              </span>
+            </div>
+            <div class="flex justify-center items-center gap-1 flex-1 p-3 px-6 rounded-[31px]">
+              <span class="text-aden-text-secondary font-pretendard text-[10px] md:text-lg font-bold leading-3 md:leading-7">
+                All-in-One Trading Tools
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content Row -->
+      <div class="flex flex-col lg:flex-row items-center gap-10 md:gap-[70px] w-full">
+        <!-- Image -->
+        <div class="h-[343px] md:h-[400px] w-full lg:flex-1 border-[8px] border-white/[0.12] bg-black/[0.04] rounded-[20px] relative overflow-hidden">
+          <div class="w-full h-[258px] absolute left-0 top-[85px] md:top-[142px] backdrop-blur-[3px]"></div>
+          <div class="w-[240px] h-[240px] md:w-[340px] md:h-[340px] absolute left-1/2 top-[52px] md:top-[30px] transform -translate-x-1/2">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/ad33659c33381eac40061641b81f19d65a13ad9f?width=480"
+              alt="Bitcoin trading"
+              class="w-full h-full object-contain"
+            />
+          </div>
+        </div>
+
+        <!-- Features List -->
+        <div class="flex flex-col justify-center items-start gap-6 w-full lg:flex-1">
+          <div class="flex flex-col items-start gap-3 w-full">
+            <div class="flex justify-between items-center w-full">
+              <h3 class="text-white font-pretendard text-base md:text-2xl font-bold leading-6 md:leading-9 flex-1">
+                Real-time order book depth and market data
+              </h3>
+            </div>
+          </div>
+
+          <div class="w-full h-px bg-white/[0.12]"></div>
+
+          <div class="flex flex-col items-start gap-3 w-full">
+            <div class="flex justify-between items-center w-full">
+              <h3 class="text-white font-pretendard text-base md:text-2xl font-bold leading-6 md:leading-9 flex-1">
+                Multiple order types supported
+              </h3>
+            </div>
+            <p class="text-aden-text-secondary font-pretendard text-[13px] md:text-base leading-5 md:leading-6">
+              Lorem Ipsum is simply dummy text of the printing and
+              typesetting industry.
+            </p>
+          </div>
+
+          <div class="w-full h-px bg-white/[0.12]"></div>
+
+          <div class="flex flex-col items-start gap-3 w-full">
+            <div class="flex justify-between items-center w-full">
+              <h3 class="text-white font-pretendard text-base md:text-2xl font-bold leading-6 md:leading-9 flex-1">
+                Fast execution and order management
+              </h3>
+            </div>
+          </div>
+
+          <div class="w-full h-px bg-white/[0.12]"></div>
+
+          <div class="flex flex-col items-start gap-3 w-full">
+            <div class="flex justify-between items-center w-full">
+              <h3 class="text-white font-pretendard text-base md:text-2xl font-bold leading-6 md:leading-9 flex-1">
+                Comprehensive trade history tracking
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Differentiators Section -->
+  <section class="py-10 md:py-24 px-4 md:px-8">
+    <div class="flex flex-col justify-center items-center gap-5 md:gap-12 w-full max-w-[1280px] mx-auto">
+      <div class="flex flex-col items-center gap-4 w-full">
+        <div class="flex items-center px-3 py-[6px] bg-aden-dark-card rounded-2xl">
+          <span class="text-white text-center font-pretendard text-xs md:text-sm font-bold leading-4 md:leading-5 tracking-[0.12px] md:tracking-[0.14px]">
+            Key Differentiators
+          </span>
+        </div>
+        <h2 class="text-center font-pretendard text-[28px] md:text-5xl font-bold leading-10 md:leading-[60px] bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent">
+          Unique Value of Our DEX
+        </h2>
+      </div>
+
+      <!-- Cards Grid -->
+      <div class="flex flex-col lg:flex-row items-start gap-4 md:gap-8 w-full">
+        <!-- Card 1 -->
+        <div class="flex flex-col justify-center items-center gap-4 flex-1 min-w-[280px] max-w-[384px] p-8 border border-white/[0.12] bg-black/[0.04] rounded-3xl w-full">
+          <div class="w-[120px] h-[120px] p-5 bg-gradient-glass rounded-[20px] flex items-center justify-center">
+            <div class="w-20 h-20 relative">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ad33659c33381eac40061641b81f19d65a13ad9f?width=160" alt="Lock Shadow" class="w-full h-full object-contain absolute left-0 top-0" />
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ad33659c33381eac40061641b81f19d65a13ad9f?width=160" alt="Lock" class="w-full h-full object-contain absolute left-0 top-0" />
+            </div>
+          </div>
+          <div class="flex flex-col items-start gap-2 w-full">
+            <h3 class="text-white font-pretendard text-xl md:text-2xl font-bold leading-8 md:leading-9 text-center w-full">
+              A New Standard for Asset Security
+            </h3>
+            <p class="text-aden-text-muted font-pretendard text-[13px] md:text-base leading-5 md:leading-6">
+              Assets are managed directly by smart contracts, not
+              centralized exchanges
+            </p>
+            <p class="text-aden-text-muted font-pretendard text-[13px] md:text-base leading-5 md:leading-6">
+              Transparent transactions powered by smart contract logic
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="flex flex-col justify-center items-center gap-4 flex-1 min-w-[280px] max-w-[384px] p-8 border border-white/[0.12] bg-black/[0.04] rounded-3xl w-full">
+          <div class="w-[120px] h-[120px] p-5 bg-gradient-glass rounded-[20px] flex items-center justify-center">
+            <div class="w-20 h-20 relative">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ad33659c33381eac40061641b81f19d65a13ad9f?width=160" alt="Secured Shadow" class="w-full h-full object-contain absolute left-0 top-0" />
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ad33659c33381eac40061641b81f19d65a13ad9f?width=160" alt="Secured" class="w-full h-full object-contain absolute left-0 top-0" />
+            </div>
+          </div>
+          <div class="flex flex-col items-start gap-2 w-full">
+            <h3 class="text-white font-pretendard text-xl md:text-2xl font-bold leading-8 md:leading-9 text-center w-full">
+              Reliable Operation with 24/7 Uptime
+            </h3>
+            <p class="text-aden-text-muted font-pretendard text-[13px] md:text-base leading-5 md:leading-6">
+              No system maintenance or service downtime
+            </p>
+            <p class="text-aden-text-muted font-pretendard text-[13px] md:text-base leading-5 md:leading-6">
+              Runs continuously to match global market demands
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="flex flex-col justify-center items-center gap-4 flex-1 min-w-[280px] max-w-[384px] p-8 border border-white/[0.12] bg-black/[0.04] rounded-3xl w-full">
+          <div class="w-[120px] h-[120px] p-5 bg-gradient-glass rounded-[20px] flex items-center justify-center">
+            <div class="w-20 h-20 relative">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ad33659c33381eac40061641b81f19d65a13ad9f?width=160" alt="Rocket Shadow" class="w-full h-full object-contain absolute left-0 top-0" />
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ad33659c33381eac40061641b81f19d65a13ad9f?width=160" alt="Rocket" class="w-full h-full object-contain absolute left-0 top-0" />
+            </div>
+          </div>
+          <div class="flex flex-col items-start gap-2 w-full">
+            <h3 class="text-white font-pretendard text-xl md:text-2xl font-bold leading-8 md:leading-9 text-center w-full">
+              Unrestricted Trading Environment
+            </h3>
+            <p class="text-aden-text-muted font-pretendard text-[13px] md:text-base leading-5 md:leading-6">
+              No daily limits or trading restrictions of any kind—trade
+              freely and openly.
+            </p>
+            <p class="text-aden-text-muted font-pretendard text-[13px] md:text-base leading-5 md:leading-6">
+              All users are offered the same tools and equal trading
+              conditions at all times.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security & Trust Section -->
+  <section class="py-10 md:py-16">
+    <div class="flex flex-col items-center gap-4 w-full px-4">
+      <div class="flex items-center px-3 py-[6px] bg-aden-dark-card rounded-2xl">
+        <span class="text-white text-center font-pretendard text-xs md:text-sm font-bold leading-4 md:leading-5 tracking-[0.12px] md:tracking-[0.14px]">
+          Security & Trust
+        </span>
+      </div>
+      <h2 class="text-center font-pretendard text-[28px] md:text-5xl font-bold leading-10 md:leading-[60px] bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent max-w-4xl">
+        Security verification at the highest industry standards
+      </h2>
+    </div>
+
+    <div class="pt-16">
+      <div class="flex flex-col justify-center items-start gap-16 w-full py-8 px-4 md:pl-[100px] border-t border-b border-white/50">
+        <div class="flex flex-wrap justify-center md:justify-start items-start gap-8 md:gap-[100px] w-full">
+          <!-- Security Partner 1 - CertiK -->
+          <div class="flex flex-col justify-center items-center gap-4 w-[200px] md:w-[280px]">
+            <div class="w-[84px] h-[84px] p-5 bg-gradient-glass rounded-[20px] flex items-center justify-center">
+              <svg class="w-12 h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#EDA320" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="flex flex-col justify-center items-center gap-2 w-full">
+              <div class="flex justify-center items-center gap-2 w-full">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 22S8 18 8 13V6L12 4L16 6V13C16 18 12 22 12 22Z" stroke="#EDA320" stroke-width="1.5"/>
+                </svg>
+                <h3 class="text-white font-pretendard text-base md:text-xl font-bold leading-6 md:leading-8">
+                  CertiK
+                </h3>
+                <svg class="w-5 h-5 opacity-40" viewBox="0 0 24 24" fill="none">
+                  <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <p class="text-aden-text-muted text-center font-pretendard text-[13px] md:text-base leading-5 md:leading-6">
+                Comprehensive smart contract security audit
+              </p>
+            </div>
+          </div>
+
+          <!-- Security Partner 2 - Guardian -->
+          <div class="flex flex-col justify-center items-center gap-4 w-[200px] md:w-[280px]">
+            <div class="w-[85px] h-[84px] p-5 bg-gradient-glass rounded-[20px] flex justify-center items-end">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/ad33659c33381eac40061641b81f19d65a13ad9f?width=70"
+                alt="Guardian"
+                class="w-[35px] h-[44px]"
+              />
+            </div>
+            <div class="flex flex-col justify-center items-center gap-2 w-full">
+              <div class="flex justify-center items-center gap-2 w-full">
+                <div class="w-6 h-6"></div>
+                <h3 class="text-white font-pretendard text-base md:text-xl font-bold leading-6 md:leading-8">
+                  Guardian
+                </h3>
+                <div class="w-5 h-5 opacity-40"></div>
+              </div>
+              <p class="text-aden-text-muted text-center font-pretendard text-[13px] md:text-base leading-5 md:leading-6">
+                Ongoing multi-layer security verification
+              </p>
+            </div>
+          </div>
+
+          <!-- Security Partner 3 - Halborn -->
+          <div class="flex flex-col justify-center items-center gap-4 w-[200px] md:w-[280px]">
+            <div class="w-[84px] h-[84px] p-5 bg-gradient-glass rounded-[20px] flex items-center justify-center">
+              <svg class="w-12 h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#EDA320" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 17L12 22L22 17" stroke="#EDA320" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 12L12 17L22 12" stroke="#EDA320" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="flex flex-col justify-center items-center gap-2 w-full">
+              <div class="flex justify-center items-center gap-2 w-full">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none">
+                  <path d="M21 16V8A2 2 0 0 0 19 6H5A2 2 0 0 0 3 8V16A2 2 0 0 0 5 18H19A2 2 0 0 0 21 16Z" stroke="#EDA320" stroke-width="1.5"/>
+                </svg>
+                <h3 class="text-white font-pretendard text-base md:text-xl font-bold leading-6 md:leading-8">
+                  Halborn
+                </h3>
+                <svg class="w-5 h-5 opacity-40" viewBox="0 0 24 24" fill="none">
+                  <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <p class="text-aden-text-muted text-center font-pretendard text-[13px] md:text-base leading-5 md:leading-6">
+                System architecture assessment
+              </p>
+            </div>
+          </div>
+
+          <!-- Security Partner 4 - Sherlock -->
+          <div class="flex flex-col justify-center items-center gap-4 w-[200px] md:w-[280px]">
+            <div class="w-[84px] h-[84px] p-5 bg-gradient-glass rounded-[20px] flex items-center justify-center">
+              <svg class="w-12 h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="11" cy="11" r="8" stroke="#EDA320" stroke-width="2"/>
+                <path d="M21 21L16.65 16.65" stroke="#EDA320" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="flex flex-col justify-center items-center gap-2 w-full">
+              <div class="flex justify-center items-center gap-2 w-full">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none">
+                  <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#EDA320" stroke-width="1.5"/>
+                </svg>
+                <h3 class="text-white font-pretendard text-base md:text-xl font-bold leading-6 md:leading-8">
+                  Sherlock
+                </h3>
+                <svg class="w-5 h-5 opacity-40" viewBox="0 0 24 24" fill="none">
+                  <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <p class="text-aden-text-muted text-center font-pretendard text-[13px] md:text-base leading-5 md:leading-6">
+                Vulnerability analysis and penetration testing
+              </p>
+            </div>
+          </div>
+
+          <!-- Security Partner 5 - Zellic -->
+          <div class="flex flex-col justify-center items-center gap-4 w-[200px] md:w-[280px]">
+            <div class="w-[84px] h-[84px] p-5 bg-gradient-glass rounded-[20px] flex items-center justify-center">
+              <svg class="w-12 h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="#EDA320" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="flex flex-col items-center gap-2 w-full">
+              <div class="flex justify-center items-center gap-2 w-full">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#EDA320" stroke-width="1.5"/>
+                </svg>
+                <h3 class="text-white font-pretendard text-base md:text-xl font-bold leading-6 md:leading-8">
+                  Zellic
+                </h3>
+                <svg class="w-5 h-5 opacity-40" viewBox="0 0 24 24" fill="none">
+                  <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <p class="text-aden-text-muted text-center font-pretendard text-[13px] md:text-base leading-5 md:leading-6">
+                Code optimization and security hardening
+              </p>
+            </div>
+          </div>
+
+          <!-- Security Partner 6 - OtterSec -->
+          <div class="flex flex-col justify-center items-center gap-4 w-[200px] md:w-[280px]">
+            <div class="w-[84px] h-[84px] p-5 bg-gradient-glass rounded-[20px] flex items-center justify-center">
+              <svg class="w-12 h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22S8 18 8 13V6L12 4L16 6V13C16 18 12 22 12 22Z" stroke="#EDA320" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9 12L11 14L15 10" stroke="#EDA320" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="flex flex-col items-center gap-2 w-full">
+              <div class="flex justify-center items-center gap-2 w-full">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="10" stroke="#EDA320" stroke-width="1.5"/>
+                </svg>
+                <h3 class="text-white font-pretendard text-base md:text-xl font-bold leading-6 md:leading-8">
+                  OtterSec
+                </h3>
+                <svg class="w-5 h-5 opacity-40" viewBox="0 0 24 24" fill="none">
+                  <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <p class="text-aden-text-muted text-center font-pretendard text-[13px] md:text-base leading-5 md:leading-6">
+                Multi-chain integration security
+              </p>
+            </div>
+          </div>
+
+          <!-- Security Partner 7 - Zenith -->
+          <div class="flex flex-col justify-center items-center gap-4 w-[200px] md:w-[280px]">
+            <div class="w-[84px] h-[84px] p-5 bg-gradient-glass rounded-[20px] flex items-center justify-center">
+              <svg class="w-12 h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="12,2 15.09,8.26 22,9 17,14.74 18.18,21.02 12,17.77 5.82,21.02 7,14.74 2,9 8.91,8.26" stroke="#EDA320" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="flex flex-col items-center gap-2 w-full">
+              <div class="flex justify-center items-center gap-2 w-full">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#EDA320" stroke-width="1.5"/>
+                </svg>
+                <h3 class="text-white font-pretendard text-base md:text-xl font-bold leading-6 md:leading-8">
+                  Zenith
+                </h3>
+                <svg class="w-5 h-5 opacity-40" viewBox="0 0 24 24" fill="none">
+                  <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <p class="text-aden-text-muted text-center font-pretendard text-[13px] md:text-base leading-5 md:leading-6">
+                Audit of the latest protocols and upgrades
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Start Guide Section -->
+  <section class="py-10 md:py-24 px-4 md:px-8">
+    <div class="flex flex-col justify-center items-center gap-5 md:gap-8 w-full max-w-[1280px] mx-auto">
+      <div class="flex flex-col lg:flex-row items-start gap-8 w-full h-[764px] md:h-auto">
+        <!-- Content -->
+        <div class="flex flex-col items-start gap-5 md:gap-12 flex-1 min-w-[280px] md:min-w-[480px] max-w-[592px] w-full">
+          <div class="flex flex-col items-start gap-4 w-full">
+            <div class="flex flex-col items-start gap-2 w-full">
+              <span class="text-aden-primary font-pretendard text-[13px] md:text-base font-bold leading-5 md:leading-6">
+                Quick Start Guide
+              </span>
+              <h2 class="text-white font-pretendard text-[28px] md:text-4xl font-bold leading-[44px] md:leading-[44px] tracking-[-0.56px] md:tracking-[-2px]">
+                Simple 3-Step Process
+              </h2>
+            </div>
+          </div>
+
+          <!-- Feature List -->
+          <div class="flex flex-col items-start gap-0 w-full">
+            <!-- Step 1 - Active -->
+            <div class="flex flex-col items-start gap-2 w-full py-2 md:py-4 pl-5 md:pl-6 border-l-2 border-aden-primary">
+              <h3 class="text-aden-primary font-pretendard text-xl md:text-2xl font-bold leading-8 md:leading-9">
+                Connect Wallet
+              </h3>
+              <p class="text-aden-text-muted font-pretendard text-sm md:text-base leading-5 md:leading-6">
+                Supports all major Web3 wallets
+              </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="flex flex-col items-start gap-2 w-full py-2 md:py-4 pl-5 md:pl-6 border-l-2 border-white/[0.12]">
+              <h3 class="text-white font-pretendard text-xl md:text-2xl font-bold leading-8 md:leading-9">
+                Deposit Assets
+              </h3>
+              <p class="text-aden-text-muted font-pretendard text-sm md:text-base leading-5 md:leading-6">
+                Securely managed by smart contracts
+              </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="flex flex-col items-start gap-2 w-full py-2 md:py-4 pl-5 md:pl-6 border-l-2 border-white/[0.12]">
+              <h3 class="text-white font-pretendard text-xl md:text-2xl font-bold leading-8 md:leading-9">
+                Start Trading
+              </h3>
+              <p class="text-aden-text-muted font-pretendard text-sm md:text-base leading-5 md:leading-6">
+                Trade instantly with a familiar interface
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image -->
+        <div class="h-[343px] md:h-[400px] w-full lg:flex-1 border-[8px] border-white/[0.12] bg-black/[0.04] rounded-[20px] relative overflow-hidden">
+          <div class="w-full h-[258px] absolute left-0 top-[85px] md:top-[142px] backdrop-blur-[3px]"></div>
+          <div class="w-[240px] h-[240px] md:w-[340px] md:h-[340px] absolute left-1/2 top-[52px] md:top-[30px] transform -translate-x-1/2">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/ad33659c33381eac40061641b81f19d65a13ad9f?width=480"
+              alt="Wallet connection"
+              class="w-full h-full object-contain"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners Logo Cloud Section -->
+  <section class="py-10 md:py-16 px-4">
+    <div class="flex flex-col items-center w-full">
+      <div class="flex flex-col items-center gap-4 w-full">
+        <div class="flex items-center px-3 py-[6px] bg-aden-dark-card rounded-2xl">
+          <span class="text-white text-center font-pretendard text-xs md:text-sm font-bold leading-4 md:leading-5 tracking-[0.12px] md:tracking-[0.14px]">
+            Trusted by the best partners.
+          </span>
+        </div>
+        <h2 class="text-center font-pretendard text-[28px] md:text-5xl font-bold leading-10 md:leading-[60px] bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent">
+          Next-generation trading platform, ADEN Experience it now.
+        </h2>
+      </div>
+
+      <div class="flex flex-col justify-center items-center gap-12 w-full py-20 md:py-24">
+        <div class="flex flex-wrap justify-center items-start gap-8 md:gap-16 w-full">
+          <!-- Partner 1 - Netdot -->
+          <div class="flex justify-center items-center gap-2 md:gap-[10px] w-[176px] md:w-[220px] h-8 md:h-auto opacity-40">
+            <div class="w-8 h-8 md:w-10 md:h-10 bg-primary rounded-[10px] md:rounded-[12.5px]"></div>
+            <span class="text-white text-center font-epilogue text-2xl md:text-3xl font-bold leading-8 md:leading-10">
+              Netdot
+            </span>
+          </div>
+
+          <!-- Partner 2 - Sparkweb -->
+          <div class="flex justify-center items-center gap-2 md:gap-[10px] w-[176px] md:w-[220px] h-8 md:h-auto opacity-40">
+            <span class="text-white text-center font-nunito text-2xl md:text-3xl font-bold leading-8 md:leading-10">
+              Sparkweb
+            </span>
+          </div>
+
+          <!-- Partner 3 - Pixelpath -->
+          <div class="flex justify-center items-center gap-2 md:gap-[10px] w-[176px] md:w-[220px] h-8 md:h-auto opacity-40">
+            <div class="w-8 h-8 md:w-10 md:h-10 relative">
+              <div class="w-[25px] md:w-8 h-[25px] md:h-8 bg-gray-300"></div>
+              <div class="w-[17px] md:w-[22px] h-[17px] md:h-[22px] bg-gray-300 absolute top-[11px] md:top-[14px] left-[11px] md:left-[14px]"></div>
+              <div class="w-[17px] md:w-[22px] h-[17px] md:h-[22px] bg-white absolute top-[15px] md:top-[18px] left-[15px] md:left-[18px]"></div>
+            </div>
+            <span class="text-white text-center font-prompt text-2xl md:text-3xl font-bold leading-8 md:leading-10">
+              Pixelpath
+            </span>
+          </div>
+
+          <!-- Partner 4 - CodeLine -->
+          <div class="flex justify-center items-center gap-2 md:gap-[10px] w-[176px] md:w-[220px] h-8 md:h-auto opacity-40">
+            <div class="w-[38px] md:w-12 h-8 md:h-10"></div>
+            <span class="text-white text-center font-bitter text-2xl md:text-3xl font-bold leading-8 md:leading-10">
+              CodeLine
+            </span>
+          </div>
+
+          <!-- Partner 5 - Digitech -->
+          <div class="flex justify-center items-center gap-2 md:gap-[10px] w-[176px] md:w-[220px] h-8 md:h-auto opacity-40">
+            <span class="text-white text-center font-poppins text-2xl md:text-3xl font-bold leading-8 md:leading-10">
+              Digitech
+            </span>
+          </div>
+
+          <!-- Partner 6 - Codelink -->
+          <div class="flex justify-center items-center gap-2 md:gap-[10px] w-[176px] md:w-[220px] h-8 md:h-auto opacity-40">
+            <span class="text-white text-center font-urbanist text-2xl md:text-3xl font-bold leading-8 md:leading-10">
+              Codelink
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 md:py-[100px] px-4 md:px-[100px]">
+    <div class="flex flex-col items-center gap-[60px] w-full">
+      <!-- CTA Buttons -->
+      <div class="flex flex-col md:flex-row justify-center md:justify-between items-center md:items-end gap-5 md:gap-0 w-full">
+        <div class="flex items-center gap-3 w-full md:w-auto">
+          <button class="flex items-center justify-center gap-2 h-12 md:h-[52px] px-6 py-2 bg-aden-primary rounded-[10px] shadow-[0px_1px_2px_0px_rgba(13,13,18,0.06)] flex-1 md:flex-initial">
+            <span class="text-white text-center font-pretendard text-[13px] md:text-base font-bold leading-5 md:leading-6">
+              Start Trading →
+            </span>
+          </button>
+          <button class="flex items-center justify-center gap-2 h-12 md:h-[52px] px-6 py-2 border border-white/[0.12] bg-white/[0.04] backdrop-blur-[6px] rounded-[10px] shadow-[0px_1px_2px_0px_rgba(13,13,18,0.06)] flex-1 md:flex-initial">
+            <span class="text-white text-center font-pretendard text-[13px] md:text-base font-bold leading-5 md:leading-6">
+              Explore the Platform
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="flex flex-col justify-center items-center gap-12 w-full">
+        <div class="flex flex-col items-start w-full pt-8 border-t border-white/[0.12]">
+          <div class="flex flex-col md:flex-row justify-center md:justify-between items-center gap-3 md:gap-0 w-full">
+            <div class="text-center md:text-left text-aden-text-muted font-pretendard text-[13px] md:text-base leading-6">
+              <span class="font-normal">© 2025 </span>
+              <span class="font-bold">ADEN Protocol.</span>
+              <span class="font-normal"> All rights reserved.</span>
+            </div>
+            <div class="flex justify-center items-center gap-4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button
+    id="scroll-to-top"
+    class="fixed bottom-10 md:bottom-[60px] right-4 md:right-[100px] w-10 h-10 md:w-12 md:h-12 cursor-pointer hover:scale-110 transition-transform duration-200"
+    aria-label="Scroll to top"
+  >
+    <div class="w-10 h-10 md:w-12 md:h-12 relative">
+      <div class="w-10 h-10 md:w-12 md:h-12 bg-[#D09300] rounded-full shadow-[0px_0px_83px_rgba(54,49,189,0.30)] md:shadow-[0px_0px_100px_rgba(54,49,189,0.30)] absolute"></div>
+      <div class="w-[22px] h-[22px] md:w-[26px] md:h-[26px] absolute top-[9px] left-[9px] md:top-[10px] md:left-[11px] flex items-center justify-center">
+        <svg
+          class="w-[18px] h-[18px] md:w-[22px] md:h-[22px]"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 4L12 20M12 4L18 10M12 4L6 10"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+    </div>
+  </button>
+
+  <script>
+    // Scroll to top functionality
+    const scrollToTopButton = document.getElementById('scroll-to-top');
+
+    if (scrollToTopButton) {
+      scrollToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+  </script>
+</Layout>

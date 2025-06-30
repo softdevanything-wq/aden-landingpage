@@ -1,0 +1,107 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "The convenience of a centralized exchange order book system combined with the freedom of decentralization. Easy for beginners, more powerful for experts." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&family=Epilogue:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800&family=Prompt:wght@400;500;600;700;800&family=Bitter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&family=Urbanist:wght@400;500;600;700;800&family=Play:wght@400;700&display=swap" rel="stylesheet" />
+  </head>
+  <body class="min-h-screen bg-aden-dark text-aden-text-primary">
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  /* ADEN DEX Brand Colors */
+  :root {
+    --aden-primary: 35 75% 52%; /* #EDA320 - Primary orange/gold */
+    --aden-primary-foreground: 0 0% 100%; /* White text on primary */
+    --aden-dark: 228 21% 5%; /* #0D0D12 - Main dark background */
+    --aden-dark-card: 38 12% 17%; /* #2D281E - Card backgrounds */
+    --aden-text-primary: 0 0% 100%; /* #FFFFFF - Primary text */
+    --aden-text-secondary: 215 14% 57%; /* #818898 - Secondary text */
+    --aden-text-muted: 215 11% 44%; /* #666D80 - Muted text */
+    --aden-border: 0 0% 100% / 0.12; /* White with 12% opacity */
+    --aden-glass: 0 0% 0% / 0.04; /* Black with 4% opacity for glass effect */
+  }
+
+  .bg-aden-dark {
+    background-color: hsl(var(--aden-dark));
+  }
+
+  .bg-aden-primary {
+    background-color: hsl(var(--aden-primary));
+  }
+
+  .bg-aden-dark-card {
+    background-color: hsl(var(--aden-dark-card));
+  }
+
+  .text-aden-text-primary {
+    color: hsl(var(--aden-text-primary));
+  }
+
+  .text-aden-text-secondary {
+    color: hsl(var(--aden-text-secondary));
+  }
+
+  .text-aden-text-muted {
+    color: hsl(var(--aden-text-muted));
+  }
+
+  .font-pretendard {
+    font-family: 'Pretendard', system-ui, sans-serif;
+  }
+
+  .font-inter {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .font-epilogue {
+    font-family: 'Epilogue', system-ui, sans-serif;
+  }
+
+  .font-nunito {
+    font-family: 'Nunito', system-ui, sans-serif;
+  }
+
+  .font-prompt {
+    font-family: 'Prompt', system-ui, sans-serif;
+  }
+
+  .font-bitter {
+    font-family: 'Bitter', serif;
+  }
+
+  .font-poppins {
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+
+  .font-urbanist {
+    font-family: 'Urbanist', system-ui, sans-serif;
+  }
+
+  .font-play {
+    font-family: 'Play', system-ui, sans-serif;
+  }
+
+  .bg-gradient-glass {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%);
+  }
+</style>
