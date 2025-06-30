@@ -1,0 +1,28 @@
+---
+export interface Props {
+  name: string;
+  logo: string;
+  fontFamily: string;
+  isFirst?: boolean;
+  isLast?: boolean;
+}
+
+const { name, logo, fontFamily, isFirst = false, isLast = false } = Astro.props;
+
+const paddingClasses = isFirst
+  ? "pl-4 md:pl-[100px]"
+  : isLast
+    ? "pr-4 md:pr-[100px]"
+    : "";
+---
+
+<div
+  class={`flex justify-center items-center gap-4 min-w-[176px] md:min-w-[220px] h-8 md:h-auto opacity-40 ${paddingClasses}`}
+>
+  <div class="h-full max-h-8 md:max-h-10" set:html={logo} />
+  <span
+    class={`text-white text-center text-2xl md:text-3xl font-bold leading-8 md:leading-10 whitespace-nowrap font-${fontFamily}`}
+  >
+    {name}
+  </span>
+</div>
