@@ -177,12 +177,12 @@ import Partner from "../components/Partner.astro";
 
       <!-- Desktop Coins and Sky -->
       <img
-        src="/shiny_coins_loop.webp"
+        src={`${import.meta.env.BASE_URL}/shiny_coins_loop.webp`}
         alt="Sky background"
         class="hidden md:block absolute left-[100px] top-[142px] w-[1240px] h-[882px] object-cover"
       />
       <img
-        src="/sky_background.webp"
+        src={`${import.meta.env.BASE_URL}/sky_background.webp`}
         alt="Sky overlay"
         class="hidden md:block absolute left-0 top-0 w-full h-[924px] object-cover"
       />
@@ -204,7 +204,7 @@ import Partner from "../components/Partner.astro";
         class="md:hidden absolute bottom-0 left-0 w-full h-[350px] flex items-end justify-center overflow-hidden"
       >
         <img
-          src="/shiny_coins_loop.webp"
+          src={`${import.meta.env.BASE_URL}/shiny_coins_loop.webp`}
           alt="Coins background"
           class="w-full h-full object-cover object-bottom"
         />
@@ -551,7 +551,7 @@ import Partner from "../components/Partner.astro";
               class="w-[240px] h-[240px] md:w-[340px] md:h-[340px] absolute left-1/2 top-[52px] md:top-[30px] transform -translate-x-1/2"
             >
               <img
-                src="/bitcoin.webp"
+                src={`${import.meta.env.BASE_URL}/bitcoin.webp`}
                 alt="Bitcoin trading"
                 class="w-full h-full object-contain"
               />
@@ -653,7 +653,7 @@ import Partner from "../components/Partner.astro";
             >
               <div class="w-20 h-20 relative">
                 <img
-                  src="/lock.webp"
+                  src={`${import.meta.env.BASE_URL}/lock.webp`}
                   alt="Lock"
                   class="w-full h-full object-contain absolute left-0 top-0"
                 />
@@ -688,7 +688,7 @@ import Partner from "../components/Partner.astro";
             >
               <div class="w-20 h-20 relative">
                 <img
-                  src="/secured.webp"
+                  src={`${import.meta.env.BASE_URL}/secured.webp`}
                   alt="Secured"
                   class="w-full h-full object-contain absolute left-0 top-0"
                 />
@@ -722,7 +722,7 @@ import Partner from "../components/Partner.astro";
             >
               <div class="w-20 h-20 relative">
                 <img
-                  src="/rocket.webp"
+                  src={`${import.meta.env.BASE_URL}/rocket.webp`}
                   alt="Rocket"
                   class="w-full h-full object-contain absolute left-0 top-0"
                 />
@@ -788,7 +788,7 @@ import Partner from "../components/Partner.astro";
             <SecurityPartner
               name="Guardian"
               description="Ongoing multi-layer security verification"
-              logo={`<img src="/guardian.webp" alt="Guardian" class="w-[35px] h-[44px]" />`}
+              logo={`<img src="${import.meta.env.BASE_URL}/guardian.webp" alt="Guardian" class="w-[35px] h-[44px]" />`}
             />
 
             <SecurityPartner
@@ -914,7 +914,7 @@ import Partner from "../components/Partner.astro";
               class="w-[240px] h-[240px] md:w-[340px] md:h-[340px] absolute left-1/2 top-[52px] md:top-[30px] transform -translate-x-1/2"
             >
               <img
-                src="/wallet.webp"
+                src={`${import.meta.env.BASE_URL}/wallet.webp`}
                 alt="Wallet connection"
                 class="w-full h-full object-contain"
               />
