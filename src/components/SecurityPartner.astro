@@ -1,0 +1,62 @@
+---
+export interface Props {
+  name: string;
+  description: string;
+  logo: string;
+}
+
+const { name, description, logo } = Astro.props;
+---
+
+<div
+  class="flex flex-col justify-center items-center gap-4 w-[200px] md:w-[280px]"
+>
+  <div
+    class="w-[84px] h-[84px] p-5 bg-gradient-glass rounded-[20px] flex items-center justify-center"
+  >
+    <Fragment set:html={logo} />
+  </div>
+  <div class="flex flex-col justify-center items-center gap-2 w-full">
+    <div class="flex justify-center items-center gap-2 w-full">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="25"
+        height="24"
+        fill="none"
+      >
+        <path
+          stroke="#4285F4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="m17 9-6 6-2.5-2.5m14-.5c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10s10 4.477 10 10Z"
+        ></path>
+      </svg>
+      <h3
+        class="text-white font-pretendard text-base md:text-xl font-bold leading-6 md:leading-8"
+      >
+        {name}
+      </h3>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="21"
+        height="20"
+        fill="none"
+      >
+        <path
+          stroke="#818898"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.5"
+          d="M16.334 10H4.667m11.667 0L10.5 4.167M16.334 10 10.5 15.833"
+          opacity=".4"></path>
+      </svg>
+    </div>
+    <p
+      class="text-aden-text-muted text-center font-pretendard text-[13px] md:text-base leading-5 md:leading-6"
+    >
+      {description}
+    </p>
+  </div>
+</div>
+
