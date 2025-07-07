@@ -2,8 +2,8 @@ import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
-  site: "http://github-dev.orderly.network",
-  base: "/aden-landingpage",
+  site: "https://aden.io",
+  base: "/v1",
   integrations: [tailwind()],
   output: "static",
   build: {
