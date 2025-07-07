@@ -289,6 +289,163 @@ import SecurityPartner from "../components/SecurityPartner.astro";
             </span>
           </button>
         </div>
+
+        <!-- Countdown Timer -->
+        <div class="flex flex-col items-center gap-6 md:gap-8 w-full">
+          <div class="flex flex-col items-center gap-4 md:gap-6">
+            <!-- Timer Label -->
+            <span
+              class="text-[#EDA320] font-pretendard text-[13px] md:text-sm font-bold leading-4 md:leading-5 tracking-[0.12px] md:tracking-[0.14px]"
+              data-lang-ko="런칭까지 남은 시간"
+              data-lang-en="Time Until Launch"
+            >
+              Time Until Launch
+            </span>
+
+            <!-- Timer Display -->
+            <div id="countdown-timer" class="flex items-center gap-3 md:gap-6">
+              <!-- Days -->
+              <div class="flex flex-col items-center">
+                <div class="relative">
+                  <!-- Glow background -->
+                  <div
+                    class="absolute inset-0 bg-gradient-to-br from-[#EDA320] to-[#F5C842] rounded-2xl blur-md opacity-40 animate-pulse"
+                  >
+                  </div>
+                  <!-- Main container -->
+                  <div
+                    class="relative w-16 h-16 md:w-24 md:h-24 bg-gradient-to-br from-[#EDA320]/20 to-[#F5C842]/20 backdrop-blur-[10px] border-2 border-[#EDA320]/50 rounded-2xl flex items-center justify-center shadow-2xl"
+                  >
+                    <span
+                      id="days"
+                      class="text-white font-pretendard text-xl md:text-4xl font-extrabold drop-shadow-lg"
+                      >00</span
+                    >
+                  </div>
+                </div>
+                <span
+                  class="text-[#EDA320] font-pretendard text-xs md:text-base font-bold mt-2 md:mt-3 uppercase tracking-wider"
+                  data-lang-ko="일"
+                  data-lang-en="Days">Days</span
+                >
+              </div>
+
+              <!-- Animated Separator -->
+              <div class="flex flex-col gap-1">
+                <div
+                  class="w-2 h-2 md:w-3 md:h-3 bg-[#EDA320] rounded-full animate-pulse"
+                >
+                </div>
+                <div
+                  class="w-2 h-2 md:w-3 md:h-3 bg-[#EDA320] rounded-full animate-pulse delay-500"
+                >
+                </div>
+              </div>
+
+              <!-- Hours -->
+              <div class="flex flex-col items-center">
+                <div class="relative">
+                  <!-- Glow background -->
+                  <div
+                    class="absolute inset-0 bg-gradient-to-br from-[#EDA320] to-[#F5C842] rounded-2xl blur-md opacity-40 animate-pulse delay-150"
+                  >
+                  </div>
+                  <!-- Main container -->
+                  <div
+                    class="relative w-16 h-16 md:w-24 md:h-24 bg-gradient-to-br from-[#EDA320]/20 to-[#F5C842]/20 backdrop-blur-[10px] border-2 border-[#EDA320]/50 rounded-2xl flex items-center justify-center shadow-2xl"
+                  >
+                    <span
+                      id="hours"
+                      class="text-white font-pretendard text-xl md:text-4xl font-extrabold drop-shadow-lg"
+                      >00</span
+                    >
+                  </div>
+                </div>
+                <span
+                  class="text-[#EDA320] font-pretendard text-xs md:text-base font-bold mt-2 md:mt-3 uppercase tracking-wider"
+                  data-lang-ko="시간"
+                  data-lang-en="Hours">Hours</span
+                >
+              </div>
+
+              <!-- Animated Separator -->
+              <div class="flex flex-col gap-1">
+                <div
+                  class="w-2 h-2 md:w-3 md:h-3 bg-[#EDA320] rounded-full animate-pulse delay-300"
+                >
+                </div>
+                <div
+                  class="w-2 h-2 md:w-3 md:h-3 bg-[#EDA320] rounded-full animate-pulse delay-700"
+                >
+                </div>
+              </div>
+
+              <!-- Minutes -->
+              <div class="flex flex-col items-center">
+                <div class="relative">
+                  <!-- Glow background -->
+                  <div
+                    class="absolute inset-0 bg-gradient-to-br from-[#EDA320] to-[#F5C842] rounded-2xl blur-md opacity-40 animate-pulse delay-300"
+                  >
+                  </div>
+                  <!-- Main container -->
+                  <div
+                    class="relative w-16 h-16 md:w-24 md:h-24 bg-gradient-to-br from-[#EDA320]/20 to-[#F5C842]/20 backdrop-blur-[10px] border-2 border-[#EDA320]/50 rounded-2xl flex items-center justify-center shadow-2xl"
+                  >
+                    <span
+                      id="minutes"
+                      class="text-white font-pretendard text-xl md:text-4xl font-extrabold drop-shadow-lg"
+                      >00</span
+                    >
+                  </div>
+                </div>
+                <span
+                  class="text-[#EDA320] font-pretendard text-xs md:text-base font-bold mt-2 md:mt-3 uppercase tracking-wider"
+                  data-lang-ko="분"
+                  data-lang-en="Minutes">Minutes</span
+                >
+              </div>
+
+              <!-- Animated Separator -->
+              <div class="flex flex-col gap-1">
+                <div
+                  class="w-2 h-2 md:w-3 md:h-3 bg-[#EDA320] rounded-full animate-pulse delay-500"
+                >
+                </div>
+                <div
+                  class="w-2 h-2 md:w-3 md:h-3 bg-[#EDA320] rounded-full animate-pulse delay-900"
+                >
+                </div>
+              </div>
+
+              <!-- Seconds -->
+              <div class="flex flex-col items-center">
+                <div class="relative">
+                  <!-- Glow background -->
+                  <div
+                    class="absolute inset-0 bg-gradient-to-br from-[#EDA320] to-[#F5C842] rounded-2xl blur-md opacity-40 animate-pulse delay-500"
+                  >
+                  </div>
+                  <!-- Main container -->
+                  <div
+                    class="relative w-16 h-16 md:w-24 md:h-24 bg-gradient-to-br from-[#EDA320]/20 to-[#F5C842]/20 backdrop-blur-[10px] border-2 border-[#EDA320]/50 rounded-2xl flex items-center justify-center shadow-2xl"
+                  >
+                    <span
+                      id="seconds"
+                      class="text-white font-pretendard text-xl md:text-4xl font-extrabold drop-shadow-lg"
+                      >00</span
+                    >
+                  </div>
+                </div>
+                <span
+                  class="text-[#EDA320] font-pretendard text-xs md:text-base font-bold mt-2 md:mt-3 uppercase tracking-wider"
+                  data-lang-ko="초"
+                  data-lang-en="Seconds">Seconds</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -2628,5 +2785,52 @@ import SecurityPartner from "../components/SecurityPartner.astro";
 
     // Initialize language on page load
     updateLanguage(currentLang);
+
+    // Countdown Timer functionality
+    function initCountdown() {
+      // Target date: July 21st, 2025 at 6pm UTC+9 (Korean Time)
+      const targetDate = new Date("2025-07-21T18:00:00+09:00");
+
+      const daysEl = document.getElementById("days");
+      const hoursEl = document.getElementById("hours");
+      const minutesEl = document.getElementById("minutes");
+      const secondsEl = document.getElementById("seconds");
+
+      function updateCountdown() {
+        const now = new Date();
+        const timeLeft = targetDate.getTime() - now.getTime();
+
+        if (timeLeft <= 0) {
+          // Countdown has ended
+          if (daysEl) daysEl.textContent = "00";
+          if (hoursEl) hoursEl.textContent = "00";
+          if (minutesEl) minutesEl.textContent = "00";
+          if (secondsEl) secondsEl.textContent = "00";
+          return;
+        }
+
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        );
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        // Update the display with zero-padding
+        if (daysEl) daysEl.textContent = days.toString().padStart(2, "0");
+        if (hoursEl) hoursEl.textContent = hours.toString().padStart(2, "0");
+        if (minutesEl)
+          minutesEl.textContent = minutes.toString().padStart(2, "0");
+        if (secondsEl)
+          secondsEl.textContent = seconds.toString().padStart(2, "0");
+      }
+
+      // Update immediately and then every second
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    }
+
+    // Initialize countdown on page load
+    initCountdown();
   </script>
 </section>
