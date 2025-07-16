@@ -268,8 +268,8 @@ import SecurityPartner from "../components/SecurityPartner.astro";
 
         <!-- CTA Buttons -->
         <div class="flex items-center gap-3 w-full md:w-auto md:justify-center">
-          <button
-            id="start-trading-btn"
+          <a
+            href="/perp/PERP_BTC_USDC"
             class="flex items-center justify-center gap-2 h-12 md:h-[52px] px-6 py-2 bg-aden-primary rounded-[10px] shadow-[0px_1px_2px_0px_rgba(13,13,18,0.06)] flex-1 md:flex-initial hover:bg-aden-primary/90 transition-colors"
           >
             <span
@@ -279,7 +279,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
             >
               Start Trading →
             </span>
-          </button>
+          </a>
         </div>
 
         <!-- Countdown Timer -->
@@ -288,10 +288,10 @@ import SecurityPartner from "../components/SecurityPartner.astro";
             <!-- Timer Label -->
             <span
               class="text-[#EDA320] font-pretendard text-[13px] md:text-sm font-bold leading-4 md:leading-5 tracking-[0.12px] md:tracking-[0.14px]"
-              data-lang-ko="런칭까지 남은 시간"
-              data-lang-en="Time Until Launch"
+              data-lang-ko="거래 런칭까지 남은 시간 (입금 기능이 오픈되었습니다.)"
+              data-lang-en="Time Until Launch (Deposit Open)"
             >
-              Time Until Launch
+              Time Until Launch (Deposit Open)
             </span>
 
             <!-- Timer Display -->
@@ -2611,50 +2611,6 @@ import SecurityPartner from "../components/SecurityPartner.astro";
         });
       });
     }
-
-    // Coming Soon Modal functionality
-    const startTradingBtn = document.getElementById("start-trading-btn");
-    const modal = document.getElementById("coming-soon-modal");
-    const closeModalBtn = document.getElementById("close-modal");
-    const modalBackdrop = document.getElementById("modal-backdrop");
-    const modalConfirm = document.getElementById("modal-confirm");
-
-    function openModal() {
-      if (modal) {
-        modal.classList.remove("hidden");
-        document.body.style.overflow = "hidden";
-      }
-    }
-
-    function closeModal() {
-      if (modal) {
-        modal.classList.add("hidden");
-        document.body.style.overflow = "";
-      }
-    }
-
-    if (startTradingBtn) {
-      startTradingBtn.addEventListener("click", openModal);
-    }
-
-    if (closeModalBtn) {
-      closeModalBtn.addEventListener("click", closeModal);
-    }
-
-    if (modalBackdrop) {
-      modalBackdrop.addEventListener("click", closeModal);
-    }
-
-    if (modalConfirm) {
-      modalConfirm.addEventListener("click", closeModal);
-    }
-
-    // Close modal on Escape key
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && modal && !modal.classList.contains("hidden")) {
-        closeModal();
-      }
-    });
 
     // Support Modal functionality
     const supportBtns = document.querySelectorAll(".support-btn");
