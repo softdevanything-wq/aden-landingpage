@@ -3,7 +3,7 @@ import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
   site: "https://aden.io",
-  base: "/v1",
+  base: "/",
   integrations: [tailwind()],
   output: "static",
   build: {

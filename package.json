@@ -1,7 +1,7 @@
 {
   "name": "aden-landingpage",
   "type": "module",
-  "homepage": "https://aden.io/v1",
+  "homepage": "https://aden.io",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
