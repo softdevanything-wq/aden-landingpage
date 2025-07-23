@@ -364,11 +364,16 @@ const ASTER_IS_READY = false; // Set to true when Aster is ready to launch
   };
 
   window.showAsterComingSoon = function () {
-    // Show coming soon message - you can customize this
-    alert("Aster is coming soon! Please check back later.");
+    // Detect current language by checking if Korean elements are visible
+    const koreanElement = document.querySelector('[data-lang-ko]');
+    const isKorean = koreanElement && koreanElement.textContent === koreanElement.getAttribute('data-lang-ko');
     
-    // Alternative: You could show a more elegant notification instead of alert
-    // For example, you could create a toast notification or update the modal content
+    // Show coming soon message in appropriate language
+    if (isKorean) {
+      alert("Aster가 곧 출시됩니다! 잠시 후 다시 확인해주세요.");
+    } else {
+      alert("Aster is coming soon! Please check back later.");
+    }
   };
 
   // DOM이 로드된 후에 이벤트 리스너 설정
