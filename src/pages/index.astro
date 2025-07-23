@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import SecurityPartner from "../components/SecurityPartner.astro";
+import ExchangeSelectModal from "../components/ExchangeSelectModal.astro";
 // import Partner from "../components/Partner.astro";
 ---
 
@@ -268,9 +269,10 @@ import SecurityPartner from "../components/SecurityPartner.astro";
 
         <!-- CTA Buttons -->
         <div class="flex items-center gap-3 w-full md:w-auto md:justify-center">
-          <a
-            href="/perp/PERP_BTC_USDC"
-            class="flex items-center justify-center gap-2 h-12 md:h-[52px] px-6 py-2 bg-aden-primary rounded-[10px] shadow-[0px_1px_2px_0px_rgba(13,13,18,0.06)] flex-1 md:flex-initial hover:bg-aden-primary/90 transition-colors"
+          <button
+            data-trading-button
+            type="button"
+            class="flex items-center justify-center gap-2 h-12 md:h-[52px] px-6 py-2 bg-aden-primary rounded-[10px] shadow-[0px_1px_2px_0px_rgba(13,13,18,0.06)] flex-1 md:flex-initial hover:bg-aden-primary/90 transition-colors cursor-pointer"
           >
             <span
               class="text-white text-center font-pretendard text-[13px] md:text-base font-bold leading-5 md:leading-6"
@@ -279,7 +281,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
             >
               Start Trading →
             </span>
-          </a>
+          </button>
         </div>
 
         <!-- Countdown Timer -->
@@ -521,10 +523,10 @@ import SecurityPartner from "../components/SecurityPartner.astro";
 
       <!-- Section Header -->
       <div
-        class="flex flex-col justify-center items-center md:items-stretch gap-4 self-stretch"
+        class="flex flex-col justify-center items-center gap-4 self-stretch"
       >
         <div
-          class="flex items-center px-3 py-[6px] bg-[#2D281E] rounded-2xl w-fit"
+          class="flex items-center px-3 py-[6px] bg-[#2D281E] rounded-2xl w-fit mx-auto"
         >
           <span
             class="text-white text-center font-pretendard text-xs md:text-sm font-bold leading-4 md:leading-5 tracking-[0.01em]"
@@ -535,7 +537,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
           </span>
         </div>
         <h2
-          class="text-center md:text-left font-pretendard text-[28px] md:text-5xl font-bold leading-10 md:leading-[60px] bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent"
+          class="text-center font-pretendard text-[28px] md:text-5xl font-bold leading-10 md:leading-[60px] bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent"
           data-lang-ko="왜 ADEN인가?"
           data-lang-en="Why ADEN?"
         >
@@ -567,15 +569,15 @@ import SecurityPartner from "../components/SecurityPartner.astro";
             <div class="flex flex-col items-stretch gap-2 self-stretch">
               <h3
                 class="text-white font-pretendard text-xl md:text-2xl font-bold leading-8 md:leading-9 tracking-[-0.04em]"
-                data-lang-ko="Orderly Network의 화이트라벨 인프라"
-                data-lang-en="Orderly Network's White-Label Infrastructure"
+                data-lang-ko="Orderly & Aster's 화이트라벨 인프라"
+                data-lang-en="Orderly & Aster's White-Label Infrastructure"
               >
                 Orderly Network's White-Label Infrastructure
               </h3>
               <p
                 class="text-[#818898] font-pretendard text-[13px] md:text-base leading-5 md:leading-6 tracking-[-0.02em] h-[100px] md:h-[168px]"
-                data-lang-ko="ADEN은 글로벌 선물 거래 인프라인 Orderly Network의 화이트라벨 솔루션을 기반으로 구축되어, 검증된 기술로 안전한 거래 환경울 추구합니다.."
-                data-lang-en="ADEN is built on the white-label solution of the global futures trading infrastructure, Orderly Network, Pursuing secure asset Trading at any time with proven technology."
+                data-lang-ko="ADEN은 글로벌 선물 거래 인프라인 Orderly Network 및 Aster의 화이트라벨 솔루션을 기반으로 구축되어, 검증된 기술로 안전한 거래 환경울 추구합니다.."
+                data-lang-en="ADEN is built on the white-label solution of the global futures trading infrastructure, Orderly Network and Aster, Pursuing secure asset Trading at any time with proven technology."
               >
                 ADEN is built on the white-label solution of the global futures
                 trading infrastructure, Orderly Network, ensuring secure asset
@@ -588,8 +590,23 @@ import SecurityPartner from "../components/SecurityPartner.astro";
                 <img
                   src="/orderly-logo.svg"
                   alt="Orderly Network"
-                  class="w-[80px] h-[80px]"
+                  class="w-[50px] h-[50px]"
                 />
+                              <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="opacity-60"
+                >
+                  <path
+                    d="M10.6641 2.6665L5.33073 7.99984L10.6641 13.3332"
+                    stroke="#EDA320"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
                 <svg
                   width="16"
                   height="16"
@@ -605,35 +622,8 @@ import SecurityPartner from "../components/SecurityPartner.astro";
                     stroke-linecap="round"
                     stroke-linejoin="round"></path>
                 </svg>
-                <svg
-                  class="w-[101px] h-[26px]"
-                  viewBox="30 0 80 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g clip-path="url(#clip0_aden_logo)">
-                    <path
-                      d="M43.371 22.7636L41.642 17.971H33.6445L31.9156 22.7636H27.6729L35.7765 1.24176H39.6108L47.7145 22.7636H43.3657H43.371ZM37.6433 6.88509L35.1295 13.8177H40.1518L37.638 6.88509H37.6433Z"
-                      fill="white"></path>
-                    <path
-                      d="M57.1022 22.6843H49.7305V1.31573H57.1022C63.0473 1.31573 67.1522 5.9234 67.1522 11.9419V12.0053C67.1522 18.0185 63.0473 22.6896 57.1022 22.6896V22.6843ZM62.7981 12C62.7981 8.21666 60.5017 5.5588 57.0969 5.5588H53.883V18.4412H57.0969C60.5017 18.4412 62.7981 15.8468 62.7981 12.0581V11.9947V12Z"
-                      fill="white"></path>
-                    <path
-                      d="M69.1567 22.6843V1.31573H83.4176V5.50068H73.288V9.83357H82.2031V14.0185H73.288V18.5046H83.5501V22.6896H69.1514L69.1567 22.6843Z"
-                      fill="white"></path>
-                    <path
-                      d="M104 19.72L99.8955 13.6222V1.31573H104V19.72Z"
-                      fill="#EDA320"></path>
-                    <path
-                      d="M103.852 22.6843H98.824L89.6703 9.09909V22.6843H85.5654V1.31573H89.3998L103.852 22.6843Z"
-                      fill="white"></path>
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_aden_logo">
-                      <rect width="104" height="24" fill="white"></rect>
-                    </clipPath>
-                  </defs>
-                </svg>
+                <img src="/aster-logo.svg" alt="Aster" class="w-[101px] h-[26px]" />
+
               </div>
             </div>
 
@@ -682,8 +672,8 @@ import SecurityPartner from "../components/SecurityPartner.astro";
               </h3>
               <p
                 class="text-[#818898] font-pretendard text-[13px] md:text-base leading-5 md:leading-6 tracking-[-0.02em] h-[100px] md:h-[168px]"
-                data-lang-ko="Orderly는 빗썸, 바이빗, 빗겟 등 국내외 주요 거래소가 신뢰하는 안정성과 기술력을 인정받은 거래 인프라입니다."
-                data-lang-en="Orderly is a trading infrastructure recognized for its reliability and technological strength, trusted by major domestic and global exchanges such as Bithumb, Bybit, and Bitget."
+                data-lang-ko="Aster와 Orderly는 팬케익스왑, 빗썸, 바이빗, 빗트겟 등 국내외 주요 거래소가 신뢰하는 안정성과 기술력을 인정받은 거래 인프라입니다."
+                data-lang-en="Aster and Orderly is a trading infrastructure recognized for its reliability and technological strength, trusted by major domestic and global exchanges such as Bithumb, Pancakeswap, Bybit, and Bitget."
               >
                 Orderly is a trading infrastructure recognized for its
                 reliability and technological strength, trusted by major
@@ -698,7 +688,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
                 <img
                   src="/bithumb-only.svg"
                   alt="Bithumb"
-                  class="h-[60px] w-auto"
+                  class="h-[40px] w-auto"
                 />
                 <svg
                   width="16"
@@ -717,9 +707,9 @@ import SecurityPartner from "../components/SecurityPartner.astro";
                 </svg>
                 <!-- Bybit Logo -->
                 <img
-                  src="/bybit-logo.svg"
+                  src="/pancakeswap.svg"
                   alt="Bybit"
-                  class="h-[50px] w-auto"
+                  class="h-[30px] w-auto"
                 />
               </div>
             </div>
@@ -771,8 +761,8 @@ import SecurityPartner from "../components/SecurityPartner.astro";
               </h3>
               <p
                 class="text-[#818898] font-pretendard text-[13px] md:text-base leading-5 md:leading-6 tracking-[-0.02em] h-[100px] md:h-[168px]"
-                data-lang-ko="ADEN은 WOOFi 및 Raydium과 함께 Orderly Network의 글로벌 오더북을 공유하여, 동일한 유동성과 거래 체결 경험을 제공합니다."
-                data-lang-en="ADEN shares Orderly Network's global order book with WOOFi and Raydium, providing the same liquidity and trade execution experience. We offer an optimized trading experience based on the stability and speed of a world-class trading engine."
+                data-lang-ko="ADEN은 Aster 및 WOOFi, Raydium등 과 함께 글로벌 오더북을 공유하여, 동일한 유동성과 거래 체결 경험을 제공합니다."
+                data-lang-en="ADEN shares global order book with WOOFi and Raydium and Aster, providing the same liquidity and trade execution experience. We offer an optimized trading experience based on the stability and speed of a world-class trading engine."
               >
                 ADEN shares Orderly Network's global order book with WOOFi and
                 Raydium, providing the same liquidity and trade execution
@@ -812,8 +802,8 @@ import SecurityPartner from "../components/SecurityPartner.astro";
                 class="text-[#818898] font-pretendard text-[13px] md:text-base leading-5 md:leading-6 h-[80px] md:h-[96px]"
               >
                 <span
-                  data-lang-ko="Raydium과 WOOFi와 함께 Orderly Network를 공유합니다.<br/>검증된 파트너사와 함께하는 안정적인 거래 환경"
-                  data-lang-en="Sharing Orderly Network with Raydium and WOOFi.<br/>Stable trading environment with verified partners"
+                  data-lang-ko="Aster 및 Raydium과 WOOFi와 함께 오더북을 공유합니다.<br/>검증된 파트너사와 함께하는 안정적인 거래 환경"
+                  data-lang-en="Sharing Orderbook with Aster and Raydium and WOOFi.<br/>Stable trading environment with verified partners"
                   >Sharing Orderly Network with Raydium and WOOFi.<br />
                   Stable trading environment with verified partners</span
                 >
@@ -845,8 +835,8 @@ import SecurityPartner from "../components/SecurityPartner.astro";
               </h3>
               <p
                 class="text-[#818898] font-pretendard text-[13px] md:text-base leading-5 md:leading-6 tracking-[-0.02em] h-[100px] md:h-[168px]"
-                data-lang-ko="ADEN은 Raydium과 WOOFi 같은 메이저 거래소 상장 프로젝트들과 함께합니다. 바이낸스, 업비트 등 글로벌 거래소에서 검증된 프로젝트들과 동일한 거래 환경을 제공합니다."
-                data-lang-en="ADEN partners with major exchange-listed projects like Raydium and WOOFi. We provide a stable and reliable trading environment through the same Orderly Network used by projects verified on global exchanges such as Binance and Upbit."
+                data-lang-ko="ADEN은 Raydium과 WOOFi 같은 메이저 거래소 상장 프로젝트들 및 바이낸스 랩스의 투자사 YZiLabs의 지원을 받은 Aster와 함께합니다. 바이낸스, 업비트 등 글로벌 거래소에서 검증된 프로젝트들과 동일한 거래 환경을 제공합니다."
+                data-lang-en="Orderly and Aster with major exchange-listed projects such as Raydium and WOOFi or backed by YZiLabs. We provide a stable and reliable trading environment through the same Aster and Orderly Network used by projects verified on global exchanges such as Binance and Upbit."
               >
                 ADEN은 Raydium과 WOOFi 같은 메이저 거래소 상장 프로젝트들과
                 함께합니다. 바이낸스, 업비트 등 글로벌 거래소에서 검증된
@@ -866,8 +856,8 @@ import SecurityPartner from "../components/SecurityPartner.astro";
                 </div>
                 <div class="flex items-center justify-center p-2">
                   <img
-                    src="/upbit.svg"
-                    alt="Upbit"
+                    src="/yzilab.svg"
+                    alt="Yzilab"
                     class="h-[51px] md:h-[68px] w-auto object-contain"
                   />
                 </div>
@@ -1388,6 +1378,9 @@ import SecurityPartner from "../components/SecurityPartner.astro";
       </div>
     </div>
   </section>
+
+  <!-- Exchange Select Modal -->
+  <ExchangeSelectModal />
 </Layout>
 
 <!-- Professional Trading Platform Section -->
