@@ -285,7 +285,10 @@ import ExchangeSelectModal from "../components/ExchangeSelectModal.astro";
         </div>
 
         <!-- Countdown Timer -->
-        <div class="flex flex-col items-center gap-6 md:gap-8 w-full">
+        <div
+          id="countdown-section"
+          class="flex flex-col items-center gap-6 md:gap-8 w-full"
+        >
           <div class="flex flex-col items-center gap-4 md:gap-6">
             <!-- Timer Label -->
             <span
@@ -522,9 +525,7 @@ import ExchangeSelectModal from "../components/ExchangeSelectModal.astro";
       </div>
 
       <!-- Section Header -->
-      <div
-        class="flex flex-col justify-center items-center gap-4 self-stretch"
-      >
+      <div class="flex flex-col justify-center items-center gap-4 self-stretch">
         <div
           class="flex items-center px-3 py-[6px] bg-[#2D281E] rounded-2xl w-fit mx-auto"
         >
@@ -592,7 +593,7 @@ import ExchangeSelectModal from "../components/ExchangeSelectModal.astro";
                   alt="Orderly Network"
                   class="w-[50px] h-[50px]"
                 />
-                              <svg
+                <svg
                   width="16"
                   height="16"
                   viewBox="0 0 16 16"
@@ -622,8 +623,11 @@ import ExchangeSelectModal from "../components/ExchangeSelectModal.astro";
                     stroke-linecap="round"
                     stroke-linejoin="round"></path>
                 </svg>
-                <img src="/aster-logo.svg" alt="Aster" class="w-[101px] h-[26px]" />
-
+                <img
+                  src="/aster-logo.svg"
+                  alt="Aster"
+                  class="w-[101px] h-[26px]"
+                />
               </div>
             </div>
 
@@ -2736,17 +2740,17 @@ import ExchangeSelectModal from "../components/ExchangeSelectModal.astro";
       const hoursEl = document.getElementById("hours");
       const minutesEl = document.getElementById("minutes");
       const secondsEl = document.getElementById("seconds");
+      const countdownSection = document.getElementById("countdown-section");
 
       function updateCountdown() {
         const now = new Date();
         const timeLeft = targetDate.getTime() - now.getTime();
 
         if (timeLeft <= 0) {
-          // Countdown has ended
-          if (daysEl) daysEl.textContent = "00";
-          if (hoursEl) hoursEl.textContent = "00";
-          if (minutesEl) minutesEl.textContent = "00";
-          if (secondsEl) secondsEl.textContent = "00";
+          // Countdown has ended - hide the entire countdown section
+          if (countdownSection) {
+            countdownSection.style.display = "none";
+          }
           return;
         }
 
