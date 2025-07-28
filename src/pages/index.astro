@@ -71,7 +71,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
       </div>
 
       <!-- Mobile Navigation and Language Selector -->
-      <div class="md:hidden flex items-center gap-4">
+      <div class="md:hidden flex items-center gap-4 min-h-[25px]">
         <div class="flex items-center gap-4">
           <!-- <a
             href="#"
@@ -92,7 +92,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
             <span data-lang-ko="고객센터" data-lang-en="Support">Support</span>
           </a>
         </div>
-        <button
+        <!-- <button
           id="mobile-lang-toggle"
           class="flex items-center gap-1 px-2 py-[6px] border border-white/[0.12] bg-white/[0.04] backdrop-blur-[6px] rounded-[10px] shadow-[0px_1px_2px_0px_rgba(13,13,18,0.06)] cursor-pointer"
         >
@@ -114,11 +114,11 @@ import SecurityPartner from "../components/SecurityPartner.astro";
               d="M1.47718 2.83731C1.56704 2.73248 1.72486 2.72033 1.82969 2.81019L4.00033 4.67074L6.17097 2.81019C6.2758 2.72034 6.43362 2.73248 6.52348 2.83731C6.61333 2.94214 6.60119 3.09996 6.49636 3.18982L4.16303 5.18982C4.06941 5.27007 3.93125 5.27007 3.83763 5.18982L1.5043 3.18982C1.39947 3.09996 1.38733 2.94214 1.47718 2.83731Z"
               fill="#EDA320"></path>
           </svg>
-        </button>
+        </button> -->
       </div>
 
       <!-- Desktop Navigation Links -->
-      <div class="hidden md:flex items-center gap-10">
+      <div class="hidden md:flex items-center gap-10 min-h-[40px]">
         <!-- <a
           href="#"
           class="text-white/90 hover:text-white text-base font-pretendard"
@@ -140,7 +140,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
       </div>
 
       <!-- Desktop Language Selector -->
-      <div
+      <!-- <div
         id="desktop-lang-toggle"
         class="hidden md:flex items-center bg-aden-dark/40 border border-white/[0.06] rounded-[26px] p-2 cursor-pointer"
       >
@@ -154,7 +154,8 @@ import SecurityPartner from "../components/SecurityPartner.astro";
         >
           EN
         </div>
-      </div>
+      </div> -->
+      <div class="hidden md:flex"></div>
     </div>
   </nav>
 
