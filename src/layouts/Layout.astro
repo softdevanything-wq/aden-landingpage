@@ -4,7 +4,10 @@ export interface Props {
   description?: string;
 }
 
-const { title, description = "The convenience of a centralized exchange order book system combined with the freedom of decentralization. Easy for beginners, more powerful for experts." } = Astro.props;
+const {
+  title,
+  description = "The convenience of a centralized exchange order book system combined with the freedom of decentralization. Easy for beginners, more powerful for experts.",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -16,141 +19,155 @@ const { title, description = "The convenience of a centralized exchange order bo
     <link rel="icon" type="image/svg+xml" href={`/favicon.webp`} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    
+
     <!-- SEO Meta Tags -->
-    <meta name="keywords" content="ADEN Exchange, 아덴 거래소, 아덴거래소, ADEN, 에이든 거래소, 아덴 코인거래소, 아덴 암호화폐 거래소, 아덴 가상화폐 거래소, 아덴 비트코인 거래소, 아덴 이더리움 거래소, 아덴 코인, ADEN 거래소, ADEN 코인, ADEN 암호화폐, ADEN crypto exchange, 아덴 거래소 가입, 아덴 거래소 수수료, 아덴 거래소 이벤트, 아덴 거래소 추천, 아덴 거래소 사용법, 아덴 거래소 출금, 아덴 거래소 입금, 아덴 거래소 KYC, 아덴 거래소 보안, 신규 암호화폐 거래소, 해외 코인거래소, 글로벌 가상화폐 거래소" />
+    <meta
+      name="keywords"
+      content="ADEN Exchange, 아덴 거래소, 아덴거래소, ADEN, 에이든 거래소, 아덴 코인거래소, 아덴 암호화폐 거래소, 아덴 가상화폐 거래소, 아덴 비트코인 거래소, 아덴 이더리움 거래소, 아덴 코인, ADEN 거래소, ADEN 코인, ADEN 암호화폐, ADEN crypto exchange, 아덴 거래소 가입, 아덴 거래소 수수료, 아덴 거래소 이벤트, 아덴 거래소 추천, 아덴 거래소 사용법, 아덴 거래소 출금, 아덴 거래소 입금, 아덴 거래소 KYC, 아덴 거래소 보안, 신규 암호화폐 거래소, 해외 코인거래소, 글로벌 가상화폐 거래소"
+    />
     <meta name="author" content="ADEN Exchange" />
-    <link rel="canonical" href="https://aden.exchange" />
+    <link rel="canonical" href="https://aden.io" />
     <meta name="robots" content="index, follow" />
     <meta name="googlebot" content="index, follow" />
-    
+
     <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="ADEN Exchange | 아덴 거래소 - 글로벌 암호화폐 거래 플랫폼" />
-    <meta property="og:description" content="아덴 거래소(ADEN Exchange)에서 안전하고 빠른 암호화폐 거래를 경험하세요. 비트코인, 이더리움, 알트코인 거래 지원. 낮은 수수료와 높은 보안성." />
-    <meta property="og:url" content="https://aden.exchange" />
+    <meta
+      property="og:title"
+      content="ADEN Exchange | 아덴 거래소 - 글로벌 암호화폐 거래 플랫폼"
+    />
+    <meta
+      property="og:description"
+      content="아덴 거래소(ADEN Exchange)에서 안전하고 빠른 암호화폐 거래를 경험하세요. 비트코인, 이더리움, 알트코인 거래 지원. 낮은 수수료와 높은 보안성."
+    />
+    <meta property="og:url" content="https://aden.io" />
     <meta property="og:site_name" content="ADEN Exchange 아덴 거래소" />
-    <meta property="og:image" content="https://aden.exchange/og-image.png" />
-    
+    <meta property="og:image" content="https://aden.io/aden-logo.svg" />
+
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="ADEN Exchange | 아덴 거래소" />
-    <meta name="twitter:description" content="글로벌 암호화폐 거래소 아덴(ADEN) - 안전한 디지털 자산 거래 플랫폼" />
-    <meta name="twitter:image" content="https://aden.exchange/twitter-card.png" />
-    
+    <meta
+      name="twitter:description"
+      content="글로벌 암호화폐 거래소 아덴(ADEN) - 안전한 디지털 자산 거래 플랫폼"
+    />
+    <meta name="twitter:image" content="https://aden.io/aden-logo.svg" />
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&family=Epilogue:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800&family=Prompt:wght@400;500;600;700;800&family=Bitter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&family=Urbanist:wght@400;500;600;700;800&family=Play:wght@400;700&display=swap" rel="stylesheet" />
-    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&family=Epilogue:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800&family=Prompt:wght@400;500;600;700;800&family=Bitter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&family=Urbanist:wght@400;500;600;700;800&family=Play:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Structured Data (Schema.org) -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FinancialService",
-      "name": "ADEN Exchange",
-      "alternateName": [
-        "아덴 거래소",
-        "아덴거래소", 
-        "ADEN 거래소",
-        "에이든 거래소",
-        "아덴 코인거래소",
-        "ADEN Crypto Exchange"
-      ],
-      "url": "https://aden.exchange",
-      "logo": "https://aden.exchange/logo.png",
-      "description": "ADEN Exchange(아덴 거래소)는 안전하고 신뢰할 수 있는 글로벌 암호화폐 거래소입니다. 비트코인, 이더리움 등 다양한 디지털 자산 거래를 지원합니다.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "Global"
-      },
-      "sameAs": [
-        "https://twitter.com/adenexchange",
-        "https://t.me/adenexchange",
-        "https://medium.com/@adenexchange"
-      ],
-      "serviceType": [
-        "암호화폐 거래소",
-        "Cryptocurrency Exchange",
-        "비트코인 거래",
-        "이더리움 거래",
-        "알트코인 거래",
-        "Digital Asset Trading"
-      ],
-      "areaServed": {
-        "@type": "GeoShape",
-        "name": "Worldwide"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Cryptocurrency Trading Services",
-        "itemListElement": [
+      {
+        "@context": "https://schema.org",
+        "@type": "FinancialService",
+        "name": "ADEN Exchange",
+        "alternateName": [
+          "아덴 거래소",
+          "아덴거래소",
+          "ADEN 거래소",
+          "에이든 거래소",
+          "아덴 코인거래소",
+          "ADEN Crypto Exchange"
+        ],
+        "url": "https://aden.io",
+        "logo": "https://aden.io/aden-logo.svg",
+        "description": "ADEN Exchange(아덴 거래소)는 안전하고 신뢰할 수 있는 글로벌 암호화폐 거래소입니다. 비트코인, 이더리움 등 다양한 디지털 자산 거래를 지원합니다.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "Global"
+        },
+        "sameAs": [
+          "https://x.com/bugscoin_bgsc",
+          "https://t.me/+mdd1gKCvyIw1OWNl"
+        ],
+        "serviceType": [
+          "암호화폐 거래소",
+          "Cryptocurrency Exchange",
+          "비트코인 거래",
+          "이더리움 거래",
+          "알트코인 거래",
+          "Digital Asset Trading"
+        ],
+        "areaServed": {
+          "@type": "GeoShape",
+          "name": "Worldwide"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Cryptocurrency Trading Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "스팟 거래 (Spot Trading)"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "선물 거래 (Futures Trading)"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "스테이킹 (Staking)"
+              }
+            }
+          ]
+        }
+      }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
           {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "스팟 거래 (Spot Trading)"
+            "@type": "Question",
+            "name": "아덴 거래소(ADEN Exchange)란 무엇인가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "아덴 거래소는 글로벌 암호화폐 거래 플랫폼으로, 안전하고 빠른 디지털 자산 거래 서비스를 제공합니다. 중앙화 거래소의 편리함과 탈중앙화의 자유로움을 결합한 차세대 거래소입니다."
             }
           },
           {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "선물 거래 (Futures Trading)"
+            "@type": "Question",
+            "name": "아덴 거래소 수수료는 어떻게 되나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ADEN Exchange는 업계 최저 수준의 거래 수수료를 제공하며, 거래량에 따라 추가 할인 혜택을 받을 수 있습니다."
             }
           },
           {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "스테이킹 (Staking)"
+            "@type": "Question",
+            "name": "아덴 거래소는 안전한가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "아덴 거래소는 최첨단 보안 시스템, 콜드 월렛 보관, 다중 서명 기술을 통해 고객 자산을 안전하게 보호합니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "아덴 거래소에서 거래 가능한 암호화폐는?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "비트코인(BTC), 이더리움(ETH)을 포함한 주요 암호화폐와 다양한 알트코인을 거래할 수 있습니다."
             }
           }
         ]
       }
-    }
-    </script>
-    
-    <!-- FAQ Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "아덴 거래소(ADEN Exchange)란 무엇인가요?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "아덴 거래소는 글로벌 암호화폐 거래 플랫폼으로, 안전하고 빠른 디지털 자산 거래 서비스를 제공합니다. 중앙화 거래소의 편리함과 탈중앙화의 자유로움을 결합한 차세대 거래소입니다."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "아덴 거래소 수수료는 어떻게 되나요?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "ADEN Exchange는 업계 최저 수준의 거래 수수료를 제공하며, 거래량에 따라 추가 할인 혜택을 받을 수 있습니다."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "아덴 거래소는 안전한가요?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "아덴 거래소는 최첨단 보안 시스템, 콜드 월렛 보관, 다중 서명 기술을 통해 고객 자산을 안전하게 보호합니다."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "아덴 거래소에서 거래 가능한 암호화폐는?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "비트코인(BTC), 이더리움(ETH)을 포함한 주요 암호화폐와 다양한 알트코인을 거래할 수 있습니다."
-          }
-        }
-      ]
-    }
     </script>
   </head>
   <body class="min-h-screen bg-aden-dark text-aden-text-primary">
@@ -197,45 +214,49 @@ const { title, description = "The convenience of a centralized exchange order bo
   }
 
   .font-pretendard {
-    font-family: 'Pretendard', system-ui, sans-serif;
+    font-family: "Pretendard", system-ui, sans-serif;
   }
 
   .font-inter {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: "Inter", system-ui, sans-serif;
   }
 
   .font-epilogue {
-    font-family: 'Epilogue', system-ui, sans-serif;
+    font-family: "Epilogue", system-ui, sans-serif;
   }
 
   .font-nunito {
-    font-family: 'Nunito', system-ui, sans-serif;
+    font-family: "Nunito", system-ui, sans-serif;
   }
 
   .font-prompt {
-    font-family: 'Prompt', system-ui, sans-serif;
+    font-family: "Prompt", system-ui, sans-serif;
   }
 
   .font-bitter {
-    font-family: 'Bitter', serif;
+    font-family: "Bitter", serif;
   }
 
   .font-poppins {
-    font-family: 'Poppins', system-ui, sans-serif;
+    font-family: "Poppins", system-ui, sans-serif;
   }
 
   .font-urbanist {
-    font-family: 'Urbanist', system-ui, sans-serif;
+    font-family: "Urbanist", system-ui, sans-serif;
   }
 
   .font-play {
-    font-family: 'Play', system-ui, sans-serif;
+    font-family: "Play", system-ui, sans-serif;
   }
 
   .bg-gradient-glass {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%);
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0.04) 100%
+    );
   }
-  
+
   /* Screen reader only - for SEO text */
   .sr-only {
     position: absolute;
@@ -244,7 +265,7 @@ const { title, description = "The convenience of a centralized exchange order bo
     padding: 0;
     margin: -1px;
     overflow: hidden;
-    clip: rect(0,0,0,0);
+    clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
   }
