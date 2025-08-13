@@ -2651,7 +2651,9 @@ import SecurityPartner from "../components/SecurityPartner.astro";
     });
 
     // Language Toggle functionality
-    let currentLang = localStorage.getItem("language") || "en";
+    // Force English as default - comment out for production if language toggle is needed
+    localStorage.setItem("language", "en");
+    let currentLang = "en";
 
     const mobileLangToggle = document.getElementById("mobile-lang-toggle");
     const desktopLangToggle = document.getElementById("desktop-lang-toggle");
