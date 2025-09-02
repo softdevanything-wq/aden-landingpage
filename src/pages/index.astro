@@ -1,10 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import SecurityPartner from "../components/SecurityPartner.astro";
+import ExchangeSelectModal from "../components/ExchangeSelectModal.astro";
 // import Partner from "../components/Partner.astro";
+
+const BASE_URL = import.meta.env.BASE_URL;
 ---
 
-<Layout title="ADEN - Pro-Grade Order Book DEX for Everyone">
+<Layout title="ADEN Exchange | 아덴 거래소 - Pro-Grade Order Book DEX">
   <!-- Navigation -->
   <nav
     class="fixed top-7 left-1/2 transform -translate-x-1/2 z-50 w-[343px] md:w-[1240px] max-w-[calc(100vw-2rem)]"
@@ -16,7 +19,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
       <div class="flex items-center">
         <!-- Mobile Logo -->
         <div class="md:hidden flex items-center gap-1">
-          <img src="/bgsc-logo.svg" alt="BGSC Logo" class="w-4 h-4" />
+          <img src={`${BASE_URL}bgsc-logo.svg`} alt="ADEN 아덴 거래소 Logo" class="w-4 h-4" />
           <svg
             width="53"
             height="16"
@@ -44,7 +47,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
 
         <!-- Desktop Logo -->
         <div class="hidden md:flex items-center gap-2">
-          <img src="/bgsc-logo.svg" alt="BGSC Logo" class="w-6 h-6" />
+          <img src={`${BASE_URL}bgsc-logo.svg`} alt="ADEN 아덴 거래소 Logo" class="w-6 h-6" />
           <svg
             width="80"
             height="24"
@@ -185,12 +188,12 @@ import SecurityPartner from "../components/SecurityPartner.astro";
 
       <!-- Desktop Coins and Sky -->
       <img
-        src="/shiny_coins_loop.webp"
+        src={`${BASE_URL}shiny_coins_loop.webp`}
         alt="Sky background"
         class="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-[142px] w-[1240px] h-[882px] object-cover"
       />
       <img
-        src="/sky_background.webp"
+        src={`${BASE_URL}sky_background.webp`}
         alt="Sky overlay"
         class="hidden md:block absolute left-0 top-0 w-full h-[924px] object-cover"
       />
@@ -212,7 +215,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
         class="md:hidden absolute top-[380px] left-0 w-full h-[400px] flex items-center justify-center overflow-hidden"
       >
         <img
-          src="/shiny_coins_loop.webp"
+          src={`${BASE_URL}shiny_coins_loop.webp`}
           alt="Coins background"
           class="absolute left-1/2 transform -translate-x-1/2 w-[600px] h-[400px] object-contain opacity-90"
         />
@@ -220,7 +223,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
 
       <!-- Mobile Sky Overlay -->
       <img
-        src="/sky_background.webp"
+        src={`${BASE_URL}sky_background.webp`}
         alt="Sky overlay"
         class="md:hidden absolute left-0 top-0 w-full h-[600px] object-cover opacity-50"
       />
@@ -239,9 +242,10 @@ import SecurityPartner from "../components/SecurityPartner.astro";
           >
             <span
               class="text-white text-center font-pretendard text-xs md:text-sm font-medium leading-4 md:leading-5"
-              data-lang-ko="DEX 암호화폐 선물 거래 플랫폼"
-              data-lang-en="DEX Crypto Futures Trading Platform"
+              data-lang-ko="아덴 거래소 | DEX 암호화폐 선물 거래 플랫폼"
+              data-lang-en="ADEN Exchange | DEX Crypto Futures Trading Platform"
             >
+              <span class="sr-only">아덴 거래소 ADEN Exchange | </span>
               DEX Crypto Futures Trading Platform
             </span>
           </div>
@@ -252,8 +256,8 @@ import SecurityPartner from "../components/SecurityPartner.astro";
             data-lang-ko="검증된 기술력의 최저 수수료 DEX"
             data-lang-en="A Pro-Grade Order Book DEX for Everyone"
           >
-            <span class="sr-only">ADEN Exchange 아덴 거래소 -</span>
-            A Pro-Grade Order Book DEX for Everyone
+            <span class="sr-only">ADEN Exchange 아덴 거래소 - </span>
+            A Pro-Grade Order Book DEX 아덴 거래소 for Everyone
             <span
               class="sr-only"
               data-lang-ko=" | 아덴 암호화폐 거래소 | 비트코인 이더리움 거래 플랫폼"
@@ -269,16 +273,18 @@ import SecurityPartner from "../components/SecurityPartner.astro";
             data-lang-ko="중앙화 거래소의 오더북 시스템의 편리함과 탈중앙화의 자유로움이 결합되었습니다. 초보자에게는 쉽고, 전문가에게는 더 강력합니다."
             data-lang-en="The convenience of a centralized exchange order book system combined with the freedom of decentralization. Easy for beginners, more powerful for experts."
           >
+            <span class="sr-only">아덴 거래소(ADEN Exchange)는 </span>
             The convenience of a centralized exchange order book system combined
             with the freedom of decentralization. Easy for beginners, more
             powerful for experts.
+            <span class="sr-only"> 아덴 거래소에서 안전한 암호화폐 거래를 시작하세요.</span>
           </p>
         </div>
 
         <!-- CTA Buttons -->
         <div class="flex items-center gap-3 w-full md:w-auto md:justify-center">
-          <a
-            href="/perp/PERP_BTC_USDC"
+          <button
+            id="open-exchange-modal"
             class="flex items-center justify-center gap-2 h-12 md:h-[52px] px-6 py-2 bg-aden-primary rounded-[10px] shadow-[0px_1px_2px_0px_rgba(13,13,18,0.06)] flex-1 md:flex-initial hover:bg-aden-primary/90 transition-colors cursor-pointer"
           >
             <span
@@ -288,7 +294,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
             >
               Start Trading →
             </span>
-          </a>
+          </button>
         </div>
 
         <!-- Countdown Timer -->
@@ -577,15 +583,15 @@ import SecurityPartner from "../components/SecurityPartner.astro";
             <div class="flex flex-col items-stretch gap-2 self-stretch">
               <h3
                 class="text-white font-pretendard text-xl md:text-2xl font-bold leading-8 md:leading-9 tracking-[-0.04em]"
-                data-lang-ko="Orderly Network의 화이트라벨 인프라"
-                data-lang-en="Orderly Network's White-Label Infrastructure"
+                data-lang-ko="Orderly & Aster's 화이트라벨 인프라"
+                data-lang-en="Orderly & Aster's White-Label Infrastructure"
               >
                 Orderly Network's White-Label Infrastructure
               </h3>
               <p
                 class="text-[#818898] font-pretendard text-[13px] md:text-base leading-5 md:leading-6 tracking-[-0.02em] h-[100px] md:h-[168px]"
-                data-lang-ko="ADEN은 글로벌 선물 거래 인프라인 Orderly Network의 화이트라벨 솔루션을 기반으로 구축되어, 검증된 기술로 안전한 거래 환경을 추구합니다."
-                data-lang-en="ADEN is built on the white-label solution of the global futures trading infrastructure, Orderly Network, ensuring secure asset trading at any time with proven technology."
+                data-lang-ko="ADEN은 글로벌 선물 거래 인프라인 Orderly Network 및 Aster의 화이트라벨 솔루션을 기반으로 구축되어, 검증된 기술로 안전한 거래 환경울 추구합니다.."
+                data-lang-en="ADEN is built on the white-label solution of the global futures trading infrastructure, Orderly Network and Aster, Pursuing secure asset Trading at any time with proven technology."
               >
                 ADEN is built on the white-label solution of the global futures
                 trading infrastructure, Orderly Network, ensuring secure asset
@@ -594,12 +600,44 @@ import SecurityPartner from "../components/SecurityPartner.astro";
             </div>
 
             <div class="flex items-center justify-center h-[180px]">
-              <div class="flex items-center justify-center">
+              <div class="flex items-center justify-center gap-4">
                 <img
-                  src="/orderly-logo.svg"
+                  src={`${BASE_URL}orderly-logo.svg`}
                   alt="Orderly Network"
                   class="w-[50px] h-[50px]"
                 />
+                              <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="opacity-60"
+                >
+                  <path
+                    d="M10.6641 2.6665L5.33073 7.99984L10.6641 13.3332"
+                    stroke="#EDA320"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="opacity-60"
+                >
+                  <path
+                    d="M5.33594 2.6665L10.6693 7.99984L5.33594 13.3332"
+                    stroke="#EDA320"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
+                <img src={`${BASE_URL}aster-logo.svg`} alt="Aster" class="w-[101px] h-[26px]" />
+
               </div>
             </div>
 
@@ -648,8 +686,8 @@ import SecurityPartner from "../components/SecurityPartner.astro";
               </h3>
               <p
                 class="text-[#818898] font-pretendard text-[13px] md:text-base leading-5 md:leading-6 tracking-[-0.02em] h-[100px] md:h-[168px]"
-                data-lang-ko="Orderly는 팬케익스왑, 빗썸, 바이빗, 빗트겟 등 국내외 주요 거래소가 신뢰하는 안정성과 기술력을 인정받은 거래 인프라입니다."
-                data-lang-en="Orderly is a trading infrastructure recognized for its reliability and technological strength, trusted by major domestic and global exchanges such as Bithumb, Pancakeswap, Bybit, and Bitget."
+                data-lang-ko="Aster와 Orderly는 팬케익스왑, 빗썸, 바이빗, 빗트겟 등 국내외 주요 거래소가 신뢰하는 안정성과 기술력을 인정받은 거래 인프라입니다."
+                data-lang-en="Aster and Orderly is a trading infrastructure recognized for its reliability and technological strength, trusted by major domestic and global exchanges such as Bithumb, Pancakeswap, Bybit, and Bitget."
               >
                 Orderly is a trading infrastructure recognized for its
                 reliability and technological strength, trusted by major
@@ -659,33 +697,17 @@ import SecurityPartner from "../components/SecurityPartner.astro";
             </div>
 
             <div class="flex items-center justify-center h-[180px]">
-              <div class="flex items-center justify-center gap-4">
-                <!-- Bithumb Logo -->
+              <!-- ADEN Logo -->
+              <div class="flex items-center gap-2">
                 <img
-                  src="/bithumb-only.svg"
-                  alt="Bithumb"
-                  class="h-[40px] w-auto"
+                  src={`${BASE_URL}bgsc-logo.svg`}
+                  alt="ADEN Logo"
+                  class="h-[30px] md:h-[40px] w-auto"
                 />
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="opacity-60"
-                >
-                  <path
-                    d="M5.33594 2.6665L10.6693 7.99984L5.33594 13.3332"
-                    stroke="#EDA320"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"></path>
-                </svg>
-                <!-- Bybit Logo -->
                 <img
-                  src="/pancakeswap.svg"
-                  alt="Bybit"
-                  class="h-[30px] w-auto"
+                  src={`${BASE_URL}adentextlogo.svg`}
+                  alt="ADEN Text"
+                  class="h-[30px] md:h-[40px] w-auto"
                 />
               </div>
             </div>
@@ -737,8 +759,8 @@ import SecurityPartner from "../components/SecurityPartner.astro";
               </h3>
               <p
                 class="text-[#818898] font-pretendard text-[13px] md:text-base leading-5 md:leading-6 tracking-[-0.02em] h-[100px] md:h-[168px]"
-                data-lang-ko="ADEN은 WOOFi, Raydium과 함께 글로벌 오더북을 공유하여, 동일한 유동성과 거래 체결 경험을 제공합니다."
-                data-lang-en="ADEN shares global order book with WOOFi and Raydium, providing the same liquidity and trade execution experience. We offer an optimized trading experience based on the stability and speed of a world-class trading engine."
+                data-lang-ko="ADEN은 Aster 및 WOOFi, Raydium등 과 함께 글로벌 오더북을 공유하여, 동일한 유동성과 거래 체결 경험을 제공합니다."
+                data-lang-en="ADEN shares global order book with WOOFi and Raydium and Aster, providing the same liquidity and trade execution experience. We offer an optimized trading experience based on the stability and speed of a world-class trading engine."
               >
                 ADEN shares Orderly Network's global order book with WOOFi and
                 Raydium, providing the same liquidity and trade execution
@@ -748,22 +770,12 @@ import SecurityPartner from "../components/SecurityPartner.astro";
             </div>
 
             <div class="flex items-center justify-center h-[180px]">
-              <div class="flex items-center justify-center gap-8 md:gap-12">
-                <div class="flex items-center justify-center p-2">
-                  <img
-                    src="/ray.svg"
-                    alt="Raydium"
-                    class="w-[200px] h-[250px] md:w-[350px] md:h-[225px] object-contain"
-                  />
-                </div>
-                <div class="flex items-center justify-center p-2">
-                  <img
-                    src="/woofi.svg"
-                    alt="WOOFi"
-                    class="w-[169px] h-[169px] md:w-[253px] md:h-[203px] object-contain"
-                  />
-                </div>
-              </div>
+              <!-- Raydium Logo -->
+              <img
+                src={`${BASE_URL}ray.svg`}
+                alt="Raydium"
+                class="h-[30px] md:h-[40px] w-auto"
+              />
             </div>
 
             <div class="flex flex-col items-stretch gap-2 self-stretch">
@@ -778,8 +790,8 @@ import SecurityPartner from "../components/SecurityPartner.astro";
                 class="text-[#818898] font-pretendard text-[13px] md:text-base leading-5 md:leading-6 h-[80px] md:h-[96px]"
               >
                 <span
-                  data-lang-ko="Raydium과 WOOFi와 함께 오더북을 공유합니다.<br/>검증된 파트너사와 함께하는 안정적인 거래 환경"
-                  data-lang-en="Sharing Orderbook with Raydium and WOOFi.<br/>Stable trading environment with verified partners"
+                  data-lang-ko="Aster 및 Raydium과 WOOFi와 함께 오더북을 공유합니다.<br/>검증된 파트너사와 함께하는 안정적인 거래 환경"
+                  data-lang-en="Sharing Orderbook with Aster and Raydium and WOOFi.<br/>Stable trading environment with verified partners"
                   >Sharing Orderly Network with Raydium and WOOFi.<br />
                   Stable trading environment with verified partners</span
                 >
@@ -811,8 +823,8 @@ import SecurityPartner from "../components/SecurityPartner.astro";
               </h3>
               <p
                 class="text-[#818898] font-pretendard text-[13px] md:text-base leading-5 md:leading-6 tracking-[-0.02em] h-[100px] md:h-[168px]"
-                data-lang-ko="ADEN은 Raydium과 WOOFi 같은 메이저 거래소 상장 프로젝트들과 함께합니다. 바이낸스, 업비트 등 글로벌 거래소에서 검증된 프로젝트들과 동일한 Orderly Network를 통해 안정적이고 신뢰할 수 있는 거래 환경을 제공합니다."
-                data-lang-en="ADEN partners with major exchange-listed projects such as Raydium and WOOFi. We provide a stable and reliable trading environment through the same Orderly Network used by projects verified on global exchanges such as Binance and Upbit."
+                data-lang-ko="ADEN은 Raydium과 WOOFi 같은 메이저 거래소 상장 프로젝트들 및 바이낸스 랩스의 투자사 YZiLabs의 지원을 받은 Aster와 함께합니다. 바이낸스, 업비트 등 글로벌 거래소에서 검증된 프로젝트들과 동일한 거래 환경을 제공합니다."
+                data-lang-en="Orderly and Aster with major exchange-listed projects such as Raydium and WOOFi or backed by YZiLabs. We provide a stable and reliable trading environment through the same Aster and Orderly Network used by projects verified on global exchanges such as Binance and Upbit."
               >
                 ADEN은 Raydium과 WOOFi 같은 메이저 거래소 상장 프로젝트들과
                 함께합니다. 바이낸스, 업비트 등 글로벌 거래소에서 검증된
@@ -822,22 +834,12 @@ import SecurityPartner from "../components/SecurityPartner.astro";
             </div>
 
             <div class="flex items-center justify-center h-[180px]">
-              <div class="grid grid-cols-2 gap-4 md:gap-6 place-items-center">
-                <div class="flex items-center justify-center p-2">
-                  <img
-                    src="/binance.png"
-                    alt="Binance"
-                    class="w-[135px] h-[135px] md:w-[169px] md:h-[169px] object-contain"
-                  />
-                </div>
-                <div class="flex items-center justify-center p-2">
-                  <img
-                    src="/yzilab.svg"
-                    alt="Yzilab"
-                    class="h-[51px] md:h-[68px] w-auto object-contain"
-                  />
-                </div>
-              </div>
+              <!-- WooFi Logo -->
+              <img
+                src={`${BASE_URL}woofi.svg`}
+                alt="WooFi"
+                class="h-[30px] md:h-[40px] w-auto"
+              />
             </div>
 
             <div class="flex flex-col items-stretch gap-2 self-stretch">
@@ -865,6 +867,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
     </div>
   </section>
 
+  <!-- Fee Comparison Section -->
   <!-- Fee Comparison Section -->
   <section id="fee-section" class="py-10 md:py-24 px-4 md:px-[100px]">
     <div
@@ -1354,6 +1357,9 @@ import SecurityPartner from "../components/SecurityPartner.astro";
       </div>
     </div>
   </section>
+
+  <!-- Exchange Select Modal -->
+  <ExchangeSelectModal />
 </Layout>
 
 <!-- Professional Trading Platform Section -->
@@ -1400,7 +1406,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
             class="w-[240px] h-[240px] md:w-[340px] md:h-[340px] absolute left-1/2 top-[52px] md:top-[30px] transform -translate-x-1/2"
           >
             <img
-              src="/bitcoin.webp"
+              src={`${BASE_URL}bitcoin.webp`}
               alt="Bitcoin trading"
               class="w-full h-full object-contain"
             />
@@ -1514,7 +1520,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
           >
             <div class="w-20 h-20 relative">
               <img
-                src="/lock.webp"
+                src={`${BASE_URL}lock.webp`}
                 alt="Lock"
                 class="w-full h-full object-contain absolute left-0 top-0"
               />
@@ -1555,7 +1561,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
           >
             <div class="w-20 h-20 relative">
               <img
-                src="/secured.webp"
+                src={`${BASE_URL}secured.webp`}
                 alt="Secured"
                 class="w-full h-full object-contain absolute left-0 top-0"
               />
@@ -1595,7 +1601,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
           >
             <div class="w-20 h-20 relative">
               <img
-                src="/rocket.webp"
+                src={`${BASE_URL}rocket.webp`}
                 alt="Rocket"
                 class="w-full h-full object-contain absolute left-0 top-0"
               />
@@ -1675,7 +1681,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
             description="Ongoing multi-layer security verification"
             descriptionKo="지속적인 다층 보안 검증"
             link="https://github.com/OrderlyNetwork/Audits/blob/main/Guardian_07_2024.pdf"
-            logo={`<img src="/guardian.webp" alt="Guardian" class="w-[35px] h-[44px]" />`}
+            logo={`<img src="${BASE_URL}guardian.webp" alt="Guardian" class="w-[35px] h-[44px]" />`}
           />
 
           <SecurityPartner
@@ -1827,7 +1833,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
             class="w-[240px] h-[240px] md:w-[340px] md:h-[340px] absolute left-1/2 top-[52px] md:top-[30px] transform -translate-x-1/2"
           >
             <img
-              src={`/wallet.webp`}
+              src={`${BASE_URL}wallet.webp`}
               alt="Wallet connection"
               class="w-full h-full object-contain"
             />
@@ -1872,7 +1878,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
               class="flex items-center justify-center min-w-[120px] md:min-w-[160px] opacity-70 hover:opacity-100 transition-opacity"
             >
               <img
-                src={`/bitget.png`}
+                src={`${BASE_URL}bitget.png`}
                 alt="Bitget"
                 class="h-8 md:h-12 object-contain"
               />
@@ -1883,7 +1889,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
               class="flex items-center justify-center min-w-[120px] md:min-w-[160px] opacity-70 hover:opacity-100 transition-opacity"
             >
               <img
-                src={`/cmc.png`}
+                src={`${BASE_URL}cmc.png`}
                 alt="CoinMarketCap"
                 class="h-8 md:h-12 object-contain"
               />
@@ -1894,7 +1900,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
               class="flex items-center justify-center min-w-[120px] md:min-w-[160px] opacity-70 hover:opacity-100 transition-opacity"
             >
               <img
-                src={`/solana.png`}
+                src={`${BASE_URL}solana.png`}
                 alt="Solana"
                 class="h-8 md:h-12 object-contain"
               />
@@ -1905,7 +1911,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
               class="flex items-center justify-center min-w-[120px] md:min-w-[160px] opacity-70 hover:opacity-100 transition-opacity"
             >
               <img
-                src={`/woo1.svg`}
+                src={`${BASE_URL}woo1.svg`}
                 alt="WOO"
                 class="h-10 md:h-16 object-contain"
               />
@@ -1916,7 +1922,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
               class="flex items-center justify-center min-w-[120px] md:min-w-[160px] opacity-70 hover:opacity-100 transition-opacity"
             >
               <img
-                src={`/gate.svg`}
+                src={`${BASE_URL}gate.svg`}
                 alt="Gate.io"
                 class="h-10 md:h-16 object-contain"
               />
@@ -1927,7 +1933,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
               class="flex items-center justify-center min-w-[120px] md:min-w-[160px] opacity-70 hover:opacity-100 transition-opacity"
             >
               <img
-                src={`/woo.png`}
+                src={`${BASE_URL}woo.png`}
                 alt="WOO Network"
                 class="h-10 md:h-16 object-contain"
               />
@@ -1938,7 +1944,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
               class="flex items-center justify-center min-w-[120px] md:min-w-[160px] opacity-70 hover:opacity-100 transition-opacity"
             >
               <img
-                src={`/eth.png`}
+                src={`${BASE_URL}eth.png`}
                 alt="Ethereum"
                 class="h-8 md:h-12 object-contain"
               />
@@ -1972,7 +1978,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
               class="flex items-center justify-center min-w-[120px] md:min-w-[160px] opacity-70 hover:opacity-100 transition-opacity"
             >
               <img
-                src={`/bitget.png`}
+                src={`${BASE_URL}bitget.png`}
                 alt="Bitget"
                 class="h-8 md:h-12 object-contain"
               />
@@ -1983,7 +1989,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
               class="flex items-center justify-center min-w-[120px] md:min-w-[160px] opacity-70 hover:opacity-100 transition-opacity"
             >
               <img
-                src={`/cmc.png`}
+                src={`${BASE_URL}cmc.png`}
                 alt="CoinMarketCap"
                 class="h-8 md:h-12 object-contain"
               />
@@ -1994,7 +2000,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
               class="flex items-center justify-center min-w-[120px] md:min-w-[160px] opacity-70 hover:opacity-100 transition-opacity"
             >
               <img
-                src={`/solana.png`}
+                src={`${BASE_URL}solana.png`}
                 alt="Solana"
                 class="h-8 md:h-12 object-contain"
               />
@@ -2005,7 +2011,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
               class="flex items-center justify-center min-w-[120px] md:min-w-[160px] opacity-70 hover:opacity-100 transition-opacity"
             >
               <img
-                src={`/woo1.svg`}
+                src={`${BASE_URL}woo1.svg`}
                 alt="WOO"
                 class="h-10 md:h-16 object-contain"
               />
@@ -2016,7 +2022,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
               class="flex items-center justify-center min-w-[120px] md:min-w-[160px] opacity-70 hover:opacity-100 transition-opacity"
             >
               <img
-                src={`/gate.svg`}
+                src={`${BASE_URL}gate.svg`}
                 alt="Gate.io"
                 class="h-10 md:h-16 object-contain"
               />
@@ -2027,7 +2033,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
               class="flex items-center justify-center min-w-[120px] md:min-w-[160px] opacity-70 hover:opacity-100 transition-opacity"
             >
               <img
-                src={`/woo.png`}
+                src={`${BASE_URL}woo.png`}
                 alt="WOO Network"
                 class="h-10 md:h-16 object-contain"
               />
@@ -2038,7 +2044,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
               class="flex items-center justify-center min-w-[120px] md:min-w-[160px] opacity-70 hover:opacity-100 transition-opacity"
             >
               <img
-                src={`/eth.png`}
+                src={`${BASE_URL}eth.png`}
                 alt="Ethereum"
                 class="h-8 md:h-12 object-contain"
               />
@@ -2278,7 +2284,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
               class="w-12 h-12 bg-[#FAE100] rounded-full flex items-center justify-center flex-shrink-0 p-2"
             >
               <img
-                src={`/kakaotalk.png`}
+                src={`${BASE_URL}kakaotalk.png`}
                 alt="KakaoTalk"
                 class="w-full h-full object-contain"
               />
@@ -2601,6 +2607,35 @@ import SecurityPartner from "../components/SecurityPartner.astro";
       });
     }
 
+    // Exchange Select Modal functionality
+    const openExchangeModalBtn = document.getElementById("open-exchange-modal");
+    const exchangeModal = document.getElementById("exchange-modal");
+    
+    if (openExchangeModalBtn && exchangeModal) {
+      openExchangeModalBtn.addEventListener("click", () => {
+        exchangeModal.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      });
+      
+      // Close modal on backdrop click
+      const modalBackdrop = exchangeModal.querySelector("[data-modal-backdrop]");
+      const modalClose = exchangeModal.querySelector("[data-modal-close]");
+      
+      if (modalBackdrop) {
+        modalBackdrop.addEventListener("click", () => {
+          exchangeModal.classList.add("hidden");
+          document.body.style.overflow = "";
+        });
+      }
+      
+      if (modalClose) {
+        modalClose.addEventListener("click", () => {
+          exchangeModal.classList.add("hidden");
+          document.body.style.overflow = "";
+        });
+      }
+    }
+
     // Support Modal functionality
     const supportBtns = document.querySelectorAll(".support-btn");
     const supportModal = document.getElementById("support-modal");
@@ -2648,7 +2683,9 @@ import SecurityPartner from "../components/SecurityPartner.astro";
     });
 
     // Language Toggle functionality
-    let currentLang = localStorage.getItem("language") || "en";
+    // Force English as default - comment out for production if language toggle is needed
+    localStorage.setItem("language", "en");
+    let currentLang = "en";
 
     const mobileLangToggle = document.getElementById("mobile-lang-toggle");
     const desktopLangToggle = document.getElementById("desktop-lang-toggle");
