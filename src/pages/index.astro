@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import SecurityPartner from "../components/SecurityPartner.astro";
+import ExchangeSelectModal from "../components/ExchangeSelectModal.astro";
 // import Partner from "../components/Partner.astro";
 ---
 
@@ -280,8 +281,8 @@ import SecurityPartner from "../components/SecurityPartner.astro";
 
         <!-- CTA Buttons -->
         <div class="flex items-center gap-3 w-full md:w-auto md:justify-center">
-          <a
-            href="/perp/PERP_BTC_USDC"
+          <button
+            id="open-exchange-modal"
             class="flex items-center justify-center gap-2 h-12 md:h-[52px] px-6 py-2 bg-aden-primary rounded-[10px] shadow-[0px_1px_2px_0px_rgba(13,13,18,0.06)] flex-1 md:flex-initial hover:bg-aden-primary/90 transition-colors cursor-pointer"
           >
             <span
@@ -291,7 +292,7 @@ import SecurityPartner from "../components/SecurityPartner.astro";
             >
               Start Trading →
             </span>
-          </a>
+          </button>
         </div>
 
         <!-- Countdown Timer -->
@@ -1313,6 +1314,9 @@ import SecurityPartner from "../components/SecurityPartner.astro";
       </div>
     </div>
   </section>
+
+  <!-- Exchange Select Modal -->
+  <ExchangeSelectModal />
 </Layout>
 
 <!-- Professional Trading Platform Section -->
@@ -2558,6 +2562,35 @@ import SecurityPartner from "../components/SecurityPartner.astro";
           behavior: "smooth",
         });
       });
+    }
+
+    // Exchange Select Modal functionality
+    const openExchangeModalBtn = document.getElementById("open-exchange-modal");
+    const exchangeModal = document.getElementById("exchange-modal");
+    
+    if (openExchangeModalBtn && exchangeModal) {
+      openExchangeModalBtn.addEventListener("click", () => {
+        exchangeModal.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      });
+      
+      // Close modal on backdrop click
+      const modalBackdrop = exchangeModal.querySelector("[data-modal-backdrop]");
+      const modalClose = exchangeModal.querySelector("[data-modal-close]");
+      
+      if (modalBackdrop) {
+        modalBackdrop.addEventListener("click", () => {
+          exchangeModal.classList.add("hidden");
+          document.body.style.overflow = "";
+        });
+      }
+      
+      if (modalClose) {
+        modalClose.addEventListener("click", () => {
+          exchangeModal.classList.add("hidden");
+          document.body.style.overflow = "";
+        });
+      }
     }
 
     // Support Modal functionality
