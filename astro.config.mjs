@@ -5,8 +5,8 @@ import tailwind from "@astrojs/tailwind";
 const BASE_PATH = process.env.PUBLIC_BASE_PATH || "/aden-landingpage/";
 
 export default defineConfig({
-  site: process.env.PUBLIC_SITE_URL || "https://softdevanything-wq.github.io",
-  base: BASE_PATH,
+  site: "https://aden.io",
+  base: "/",
   integrations: [tailwind()],
   output: "static",
   build: {
