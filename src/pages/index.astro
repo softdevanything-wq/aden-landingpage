@@ -566,7 +566,7 @@ import ExchangeSelectModal from "../components/ExchangeSelectModal.astro";
         >
           <!-- Feature Card 1 -->
           <div
-            class="flex flex-col items-center gap-4 md:gap-6 flex-1 px-2 py-5 md:p-6 rounded-3xl w-full border-b md:border-b-0 border-white/[0.04]"
+            class="flex flex-col items-start gap-4 md:gap-6 flex-1 px-2 py-5 md:p-6 rounded-3xl w-full border-b md:border-b-0 border-white/[0.04]"
           >
             <div class="w-[235px]">
               <span
@@ -581,15 +581,15 @@ import ExchangeSelectModal from "../components/ExchangeSelectModal.astro";
             <div class="flex flex-col items-stretch gap-2 self-stretch">
               <h3
                 class="text-white font-pretendard text-xl md:text-2xl font-bold leading-8 md:leading-9 tracking-[-0.04em]"
-                data-lang-ko="Orderly Network의 화이트라벨 인프라"
-                data-lang-en="Orderly Network's White-Label Infrastructure"
+                data-lang-ko="Orderly & Aster's 화이트라벨 인프라"
+                data-lang-en="Orderly & Aster's White-Label Infrastructure"
               >
                 Orderly Network's White-Label Infrastructure
               </h3>
               <p
                 class="text-[#818898] font-pretendard text-[13px] md:text-base leading-5 md:leading-6 tracking-[-0.02em] h-[100px] md:h-[168px]"
-                data-lang-ko="ADEN은 글로벌 선물 거래 인프라인 Orderly Network의 화이트라벨 솔루션을 기반으로 구축되어, 검증된 기술로 안전한 거래 환경을 추구합니다."
-                data-lang-en="ADEN is built on the white-label solution of the global futures trading infrastructure, Orderly Network, ensuring secure asset trading at any time with proven technology."
+                data-lang-ko="ADEN은 글로벌 선물 거래 인프라인 Orderly Network 및 Aster의 화이트라벨 솔루션을 기반으로 구축되어, 검증된 기술로 안전한 거래 환경울 추구합니다.."
+                data-lang-en="ADEN is built on the white-label solution of the global futures trading infrastructure, Orderly Network and Aster, Pursuing secure asset Trading at any time with proven technology."
               >
                 ADEN is built on the white-label solution of the global futures
                 trading infrastructure, Orderly Network, ensuring secure asset
@@ -598,12 +598,45 @@ import ExchangeSelectModal from "../components/ExchangeSelectModal.astro";
             </div>
 
             <div class="flex items-center justify-center h-[180px]">
-              <!-- Orderly Logo -->
-              <img
-                src="/orderly-logo.svg"
-                alt="Orderly Network"
-                class="h-[60px] md:h-[80px] w-auto"
-              />
+              <div class="flex items-center justify-center gap-4">
+                <img
+                  src="/orderly-logo.svg"
+                  alt="Orderly Network"
+                  class="w-[50px] h-[50px]"
+                />
+                              <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="opacity-60"
+                >
+                  <path
+                    d="M10.6641 2.6665L5.33073 7.99984L10.6641 13.3332"
+                    stroke="#EDA320"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="opacity-60"
+                >
+                  <path
+                    d="M5.33594 2.6665L10.6693 7.99984L5.33594 13.3332"
+                    stroke="#EDA320"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
+                <img src="/aster-logo.svg" alt="Aster" class="w-[101px] h-[26px]" />
+
+              </div>
             </div>
 
             <div class="flex flex-col items-stretch gap-2 self-stretch">
@@ -629,7 +662,7 @@ import ExchangeSelectModal from "../components/ExchangeSelectModal.astro";
 
           <!-- Feature Card 2 -->
           <div
-            class="flex flex-col items-center gap-4 md:gap-6 flex-1 px-2 py-5 md:p-6 rounded-3xl w-full border-b md:border-b-0 border-white/[0.04]"
+            class="flex flex-col items-start gap-4 md:gap-6 flex-1 px-2 py-5 md:p-6 rounded-3xl w-full border-b md:border-b-0 border-white/[0.04]"
           >
             <div class="w-[235px]">
               <span
@@ -651,8 +684,8 @@ import ExchangeSelectModal from "../components/ExchangeSelectModal.astro";
               </h3>
               <p
                 class="text-[#818898] font-pretendard text-[13px] md:text-base leading-5 md:leading-6 tracking-[-0.02em] h-[100px] md:h-[168px]"
-                data-lang-ko="Orderly는 팬케익스왑, 빗썸, 바이빗, 빗트겟 등 국내외 주요 거래소가 신뢰하는 안정성과 기술력을 인정받은 거래 인프라입니다."
-                data-lang-en="Orderly is a trading infrastructure recognized for its reliability and technological strength, trusted by major domestic and global exchanges such as Bithumb, Pancakeswap, Bybit, and Bitget."
+                data-lang-ko="Aster와 Orderly는 팬케익스왑, 빗썸, 바이빗, 빗트겟 등 국내외 주요 거래소가 신뢰하는 안정성과 기술력을 인정받은 거래 인프라입니다."
+                data-lang-en="Aster and Orderly is a trading infrastructure recognized for its reliability and technological strength, trusted by major domestic and global exchanges such as Bithumb, Pancakeswap, Bybit, and Bitget."
               >
                 Orderly is a trading infrastructure recognized for its
                 reliability and technological strength, trusted by major
@@ -662,12 +695,35 @@ import ExchangeSelectModal from "../components/ExchangeSelectModal.astro";
             </div>
 
             <div class="flex items-center justify-center h-[180px]">
-              <!-- ADEN Logo -->
-              <img
-                src="/adentextlogo.svg"
-                alt="ADEN Exchange 아덴 거래소"
-                class="h-[60px] md:h-[80px] w-auto"
-              />
+              <div class="flex items-center justify-center gap-4">
+                <!-- Bithumb Logo -->
+                <img
+                  src="/bithumb-only.svg"
+                  alt="Bithumb"
+                  class="h-[40px] w-auto"
+                />
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="opacity-60"
+                >
+                  <path
+                    d="M5.33594 2.6665L10.6693 7.99984L5.33594 13.3332"
+                    stroke="#EDA320"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
+                <!-- Bybit Logo -->
+                <img
+                  src="/pancakeswap.svg"
+                  alt="Bybit"
+                  class="h-[30px] w-auto"
+                />
+              </div>
             </div>
 
             <div class="flex flex-col items-stretch gap-2 self-stretch">
@@ -695,7 +751,7 @@ import ExchangeSelectModal from "../components/ExchangeSelectModal.astro";
 
           <!-- Feature Card 3 -->
           <div
-            class="flex flex-col items-center gap-4 md:gap-6 flex-1 px-2 py-5 md:p-6 rounded-3xl w-full border-b md:border-b-0 border-white/[0.04]"
+            class="flex flex-col items-start gap-4 md:gap-6 flex-1 px-2 py-5 md:p-6 rounded-3xl w-full border-b md:border-b-0 border-white/[0.04]"
           >
             <div class="w-[235px]">
               <span
@@ -717,8 +773,8 @@ import ExchangeSelectModal from "../components/ExchangeSelectModal.astro";
               </h3>
               <p
                 class="text-[#818898] font-pretendard text-[13px] md:text-base leading-5 md:leading-6 tracking-[-0.02em] h-[100px] md:h-[168px]"
-                data-lang-ko="ADEN은 WOOFi, Raydium과 함께 글로벌 오더북을 공유하여, 동일한 유동성과 거래 체결 경험을 제공합니다."
-                data-lang-en="ADEN shares global order book with WOOFi and Raydium, providing the same liquidity and trade execution experience. We offer an optimized trading experience based on the stability and speed of a world-class trading engine."
+                data-lang-ko="ADEN은 Aster 및 WOOFi, Raydium등 과 함께 글로벌 오더북을 공유하여, 동일한 유동성과 거래 체결 경험을 제공합니다."
+                data-lang-en="ADEN shares global order book with WOOFi and Raydium and Aster, providing the same liquidity and trade execution experience. We offer an optimized trading experience based on the stability and speed of a world-class trading engine."
               >
                 ADEN shares Orderly Network's global order book with WOOFi and
                 Raydium, providing the same liquidity and trade execution
@@ -728,12 +784,22 @@ import ExchangeSelectModal from "../components/ExchangeSelectModal.astro";
             </div>
 
             <div class="flex items-center justify-center h-[180px]">
-              <!-- Raydium Logo -->
-              <img
-                src="/ray.svg"
-                alt="Raydium"
-                class="h-[60px] md:h-[80px] w-auto"
-              />
+              <div class="flex items-center justify-center gap-8 md:gap-12">
+                <div class="flex items-center justify-center p-2">
+                  <img
+                    src="/ray.svg"
+                    alt="Raydium"
+                    class="w-[200px] h-[250px] md:w-[350px] md:h-[225px] object-contain"
+                  />
+                </div>
+                <div class="flex items-center justify-center p-2">
+                  <img
+                    src="/woofi.svg"
+                    alt="WOOFi"
+                    class="w-[169px] h-[169px] md:w-[253px] md:h-[203px] object-contain"
+                  />
+                </div>
+              </div>
             </div>
 
             <div class="flex flex-col items-stretch gap-2 self-stretch">
@@ -748,8 +814,8 @@ import ExchangeSelectModal from "../components/ExchangeSelectModal.astro";
                 class="text-[#818898] font-pretendard text-[13px] md:text-base leading-5 md:leading-6 h-[80px] md:h-[96px]"
               >
                 <span
-                  data-lang-ko="Raydium과 WOOFi와 함께 오더북을 공유합니다.<br/>검증된 파트너사와 함께하는 안정적인 거래 환경"
-                  data-lang-en="Sharing Orderbook with Raydium and WOOFi.<br/>Stable trading environment with verified partners"
+                  data-lang-ko="Aster 및 Raydium과 WOOFi와 함께 오더북을 공유합니다.<br/>검증된 파트너사와 함께하는 안정적인 거래 환경"
+                  data-lang-en="Sharing Orderbook with Aster and Raydium and WOOFi.<br/>Stable trading environment with verified partners"
                   >Sharing Orderly Network with Raydium and WOOFi.<br />
                   Stable trading environment with verified partners</span
                 >
@@ -759,7 +825,7 @@ import ExchangeSelectModal from "../components/ExchangeSelectModal.astro";
 
           <!-- Feature Card 4 -->
           <div
-            class="flex flex-col items-center gap-4 md:gap-6 flex-1 px-2 py-5 md:p-6 rounded-3xl w-full"
+            class="flex flex-col items-start gap-4 md:gap-6 flex-1 px-2 py-5 md:p-6 rounded-3xl w-full"
           >
             <div class="w-[235px]">
               <span
@@ -781,8 +847,8 @@ import ExchangeSelectModal from "../components/ExchangeSelectModal.astro";
               </h3>
               <p
                 class="text-[#818898] font-pretendard text-[13px] md:text-base leading-5 md:leading-6 tracking-[-0.02em] h-[100px] md:h-[168px]"
-                data-lang-ko="ADEN은 Raydium과 WOOFi 같은 메이저 거래소 상장 프로젝트들과 함께합니다. 바이낸스, 업비트 등 글로벌 거래소에서 검증된 프로젝트들과 동일한 Orderly Network를 통해 안정적이고 신뢰할 수 있는 거래 환경을 제공합니다."
-                data-lang-en="ADEN partners with major exchange-listed projects such as Raydium and WOOFi. We provide a stable and reliable trading environment through the same Orderly Network used by projects verified on global exchanges such as Binance and Upbit."
+                data-lang-ko="ADEN은 Raydium과 WOOFi 같은 메이저 거래소 상장 프로젝트들 및 바이낸스 랩스의 투자사 YZiLabs의 지원을 받은 Aster와 함께합니다. 바이낸스, 업비트 등 글로벌 거래소에서 검증된 프로젝트들과 동일한 거래 환경을 제공합니다."
+                data-lang-en="Orderly and Aster with major exchange-listed projects such as Raydium and WOOFi or backed by YZiLabs. We provide a stable and reliable trading environment through the same Aster and Orderly Network used by projects verified on global exchanges such as Binance and Upbit."
               >
                 ADEN은 Raydium과 WOOFi 같은 메이저 거래소 상장 프로젝트들과
                 함께합니다. 바이낸스, 업비트 등 글로벌 거래소에서 검증된
@@ -792,12 +858,22 @@ import ExchangeSelectModal from "../components/ExchangeSelectModal.astro";
             </div>
 
             <div class="flex items-center justify-center h-[180px]">
-              <!-- WooFi Logo -->
-              <img
-                src="/woofi.svg"
-                alt="WooFi"
-                class="h-[60px] md:h-[80px] w-auto"
-              />
+              <div class="grid grid-cols-2 gap-4 md:gap-6 place-items-center">
+                <div class="flex items-center justify-center p-2">
+                  <img
+                    src="/binance.png"
+                    alt="Binance"
+                    class="w-[135px] h-[135px] md:w-[169px] md:h-[169px] object-contain"
+                  />
+                </div>
+                <div class="flex items-center justify-center p-2">
+                  <img
+                    src="/yzilab.svg"
+                    alt="Yzilab"
+                    class="h-[51px] md:h-[68px] w-auto object-contain"
+                  />
+                </div>
+              </div>
             </div>
 
             <div class="flex flex-col items-stretch gap-2 self-stretch">
@@ -825,6 +901,7 @@ import ExchangeSelectModal from "../components/ExchangeSelectModal.astro";
     </div>
   </section>
 
+  <!-- Fee Comparison Section -->
   <!-- Fee Comparison Section -->
   <section id="fee-section" class="py-10 md:py-24 px-4 md:px-[100px]">
     <div
