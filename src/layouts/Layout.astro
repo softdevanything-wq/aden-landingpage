@@ -171,6 +171,31 @@ const BASE_URL = import.meta.env.BASE_URL;
         ]
       }
     </script>
+
+    <!-- Redirect Script for specific paths -->
+    <script is:inline>
+      (function() {
+        const redirectPaths = [
+          '/demo_trading',
+          '/perp',
+          '/portfolio',
+          '/markets',
+          '/leaderboard',
+          '/referral',
+          '/competition'
+        ];
+        
+        const currentPath = window.location.pathname;
+        const shouldRedirect = redirectPaths.some(path => 
+          currentPath === path || currentPath.startsWith(path + '/')
+        );
+        
+        if (shouldRedirect) {
+          const targetUrl = 'https://perp.aden.io' + currentPath + window.location.search;
+          window.location.replace(targetUrl);
+        }
+      })();
+    </script>
   </head>
   <body class="min-h-screen bg-aden-dark text-aden-text-primary">
     <slot />
